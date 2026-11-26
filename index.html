@@ -1,137 +1,191 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Gallery</title>
+<title>Royal Barbers | Barbershop in Wimbledon, Haydons Road</title>
+<meta name="description" content="Royal Barbers, 323A Haydons Road, Wimbledon SW19 8LA. Haircuts, skin fades, beard trims and hot towel shaves. No appointment needed. Open 7 days.">
 <style>
   :root {
     --black: #070707;
-    --coal: #121212;
+    --coal: #101010;
+    --panel: #161412;
     --gold: #c9a14a;
     --gold-bright: #e6c36a;
     --gold-deep: #8a6b25;
     --ivory: #efe8d6;
     --muted: #a99d82;
-    --radius: 2px;
+    --display: "Didot", "Bodoni MT", "Playfair Display", Georgia, serif;
+    --body: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   }
   * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 76px; }
   body {
     margin: 0;
     background: var(--black);
     color: var(--ivory);
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-    line-height: 1.55;
-  }
-
-  /* Barber pole strip: the one moving element on the page */
-  .pole {
-    height: 14px;
-    background: repeating-linear-gradient(
-      -45deg,
-      var(--gold) 0 14px,
-      var(--black) 14px 28px,
-      var(--ivory) 28px 42px,
-      var(--black) 42px 56px
-    );
-    background-size: 79.2px 79.2px;
-    animation: spin 2.4s linear infinite;
-    border-bottom: 1px solid var(--gold-deep);
-  }
-  .pole.bottom { border-bottom: 0; border-top: 1px solid var(--gold-deep); }
-  @keyframes spin { to { background-position: 79.2px 0; } }
-
-  header {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 64px 20px 36px;
-    text-align: center;
-  }
-  h1 {
-    margin: 0 0 12px;
-    font-family: "Didot", "Bodoni MT", "Playfair Display", Georgia, serif;
-    font-size: clamp(2.4rem, 7vw, 4.5rem);
-    font-weight: 700;
-    letter-spacing: 0.01em;
-    color: var(--gold-bright);
-    background: linear-gradient(180deg, var(--gold-bright), var(--gold) 55%, var(--gold-deep));
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  header p {
-    margin: 0 auto;
-    max-width: 52ch;
-    color: var(--muted);
+    font-family: var(--body);
+    line-height: 1.6;
     font-size: 1.05rem;
   }
+  img { display: block; max-width: 100%; }
+  a { color: var(--gold-bright); }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 22px; }
 
-  main { max-width: 1100px; margin: 0 auto; padding: 0 20px 72px; }
+  h1, h2, h3 { font-family: var(--display); font-weight: 700; margin: 0; line-height: 1.1; }
+  h2 {
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    background: linear-gradient(180deg, var(--gold-bright), var(--gold) 60%, var(--gold-deep));
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 
-  .grid { columns: 3 280px; column-gap: 18px; }
-  .item {
-    break-inside: avoid;
-    margin: 0 0 18px;
-    padding: 0;
-    width: 100%;
-    display: block;
-    cursor: zoom-in;
-    background: var(--coal);
-    border: 1px solid var(--gold-deep);
-    border-radius: var(--radius);
-    overflow: hidden;
+  /* Barber pole strip: the one moving element */
+  .pole {
+    height: 12px;
+    background: repeating-linear-gradient(-45deg,
+      var(--gold) 0 14px, var(--black) 14px 28px, var(--ivory) 28px 42px, var(--black) 42px 56px);
+    background-size: 79.2px 79.2px;
+    animation: spin 2.4s linear infinite;
+  }
+  @keyframes spin { to { background-position: 79.2px 0; } }
+
+  /* Nav */
+  nav {
+    position: sticky; top: 0; z-index: 20;
+    background: rgba(7,7,7,.94);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--gold-deep);
+  }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 64px; }
+  .brand {
+    font-family: var(--display); font-size: 1.35rem; font-weight: 700;
+    color: var(--gold-bright); text-decoration: none;
+  }
+  nav ul { display: flex; gap: 24px; list-style: none; margin: 0; padding: 0; }
+  nav ul a { color: var(--ivory); text-decoration: none; font-size: .98rem; padding: 6px 0; border-bottom: 2px solid transparent; }
+  nav ul a:hover { border-color: var(--gold); }
+  .call-btn {
+    background: var(--gold); color: var(--black); text-decoration: none; font-weight: 700;
+    padding: 9px 18px; border-radius: 2px; white-space: nowrap;
+  }
+  .call-btn:hover { background: var(--gold-bright); }
+  @media (max-width: 760px) { nav ul { display: none; } }
+
+  a:focus-visible, button:focus-visible { outline: 3px solid var(--gold-bright); outline-offset: 3px; }
+
+  /* Hero */
+  .hero {
     position: relative;
-    transition: border-color .2s ease;
+    min-height: min(86vh, 780px);
+    display: flex; align-items: flex-end;
+    background: #000;
+    overflow: hidden;
   }
-  .item:hover { border-color: var(--gold-bright); }
-  .item:focus-visible { outline: 3px solid var(--gold-bright); outline-offset: 3px; }
-  .item img { display: block; width: 100%; height: auto; }
-  .item span {
-    position: absolute; left: 0; right: 0; bottom: 0;
-    padding: 34px 14px 12px;
-    text-align: left;
-    font-family: "Didot", "Bodoni MT", "Playfair Display", Georgia, serif;
-    font-size: 1.15rem;
-    color: var(--gold-bright);
-    background: linear-gradient(transparent, rgba(0,0,0,.88));
+  .hero > img {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    object-fit: cover; object-position: center 40%;
+    opacity: .62;
+  }
+  .hero::after {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(7,7,7,.35) 0%, rgba(7,7,7,.55) 45%, var(--black) 100%);
+  }
+  .hero .wrap { position: relative; z-index: 1; padding-bottom: 64px; padding-top: 120px; }
+  .hero h1 {
+    font-size: clamp(3rem, 10vw, 6.5rem);
+    background: linear-gradient(180deg, var(--gold-bright), var(--gold) 55%, var(--gold-deep));
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .hero p.lead { font-size: clamp(1.1rem, 2.4vw, 1.4rem); max-width: 36ch; margin: 14px 0 28px; color: var(--ivory); }
+  .btns { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn {
+    display: inline-block; padding: 13px 26px; border-radius: 2px; font-weight: 700; text-decoration: none;
+    border: 1px solid var(--gold);
+  }
+  .btn.solid { background: var(--gold); color: var(--black); }
+  .btn.solid:hover { background: var(--gold-bright); }
+  .btn.ghost { color: var(--gold-bright); background: rgba(0,0,0,.4); }
+  .btn.ghost:hover { background: var(--gold); color: var(--black); }
+
+  /* Info strip */
+  .strip { background: var(--panel); border-top: 1px solid var(--gold-deep); border-bottom: 1px solid var(--gold-deep); }
+  .strip ul {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: repeat(4, 1fr);
+  }
+  .strip li { padding: 20px 14px; text-align: center; font-family: var(--display); font-size: 1.1rem; color: var(--gold-bright); }
+  .strip li + li { border-left: 1px solid var(--gold-deep); }
+  @media (max-width: 760px) {
+    .strip ul { grid-template-columns: 1fr 1fr; }
+    .strip li:nth-child(3) { border-left: 0; }
+    .strip li:nth-child(n+3) { border-top: 1px solid var(--gold-deep); }
   }
 
-  /* Lightbox */
-  .lb {
-    position: fixed; inset: 0; z-index: 10;
-    display: none; align-items: center; justify-content: center;
-    background: rgba(0, 0, 0, .95);
-    padding: 24px;
+  section { padding: 84px 0; }
+
+  /* About */
+  .about { display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; align-items: center; }
+  .about p { color: var(--ivory); max-width: 52ch; }
+  .about h2 { margin-bottom: 20px; }
+  .frame { border: 1px solid var(--gold-deep); padding: 8px; background: var(--coal); }
+  .frame img { width: 100%; height: 100%; object-fit: cover; }
+  .frame figcaption { padding: 10px 4px 2px; font-family: var(--display); color: var(--gold-bright); }
+  figure { margin: 0; }
+  .about-photos { display: grid; gap: 16px; }
+  .about-photos .interior img { aspect-ratio: 4 / 3; }
+  @media (max-width: 860px) { .about { grid-template-columns: 1fr; } }
+
+  /* Prices */
+  .prices { background: var(--panel); border-top: 1px solid var(--gold-deep); border-bottom: 1px solid var(--gold-deep); }
+  .prices .head { text-align: center; margin-bottom: 44px; }
+  .prices .head p { color: var(--muted); margin: 10px 0 0; }
+  .price-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+  .group + .group { margin-top: 36px; }
+  .group h3 { font-size: 1.5rem; color: var(--gold-bright); margin-bottom: 8px; padding-bottom: 8px; border-bottom: 1px solid var(--gold-deep); }
+  .group ul { list-style: none; margin: 0; padding: 0; }
+  .group li { display: flex; align-items: baseline; gap: 10px; padding: 9px 0; }
+  .group li .name { flex: 0 1 auto; }
+  .group li .dots { flex: 1 1 auto; border-bottom: 1px dotted var(--gold-deep); transform: translateY(-4px); min-width: 16px; }
+  .group li .price { font-family: var(--display); font-size: 1.3rem; font-weight: 700; color: var(--gold-bright); }
+  .menu-photo { position: sticky; top: 90px; }
+  .menu-photo img { width: 100%; height: auto; }
+  .note { margin-top: 28px; color: var(--muted); font-size: .95rem; }
+  @media (max-width: 860px) {
+    .price-grid { grid-template-columns: 1fr; gap: 36px; }
+    .menu-photo { position: static; order: -1; }
   }
-  .lb.open { display: flex; }
-  .lb figure { margin: 0; max-width: 100%; max-height: 100%; text-align: center; }
-  .lb img {
-    max-width: 100%; max-height: 78vh;
-    border: 1px solid var(--gold);
-    border-radius: var(--radius);
-  }
-  .lb figcaption {
-    margin-top: 14px;
-    color: var(--gold-bright);
-    font-family: "Didot", "Bodoni MT", "Playfair Display", Georgia, serif;
-    font-size: 1.2rem;
-  }
-  .lb figcaption small { display: block; color: var(--muted); font-family: inherit; font-size: .85rem; margin-top: 2px; }
-  .lb button {
-    position: absolute; cursor: pointer;
-    background: var(--black); color: var(--gold-bright);
-    border: 1px solid var(--gold);
-    width: 46px; height: 46px; border-radius: 50%; font-size: 1.5rem; line-height: 1;
-  }
-  .lb button:hover { background: var(--gold); color: var(--black); }
-  .lb button:focus-visible { outline: 3px solid var(--ivory); outline-offset: 2px; }
-  .lb .close { top: 16px; right: 16px; }
-  .lb .prev { left: 16px; top: 50%; transform: translateY(-50%); }
-  .lb .next { right: 16px; top: 50%; transform: translateY(-50%); }
+
+  /* Work */
+  .work { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+  .work h2 { margin-bottom: 18px; }
+  .work p { max-width: 46ch; }
+  .work .frame img { aspect-ratio: 4 / 5; }
+  @media (max-width: 860px) { .work { grid-template-columns: 1fr; } .work .frame { order: -1; } }
+
+  /* Visit */
+  .visit { background: var(--panel); border-top: 1px solid var(--gold-deep); }
+  .visit h2 { margin-bottom: 36px; }
+  .visit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; }
+  .visit h3 { font-size: 1.5rem; color: var(--gold-bright); margin-bottom: 10px; }
+  .visit address { font-style: normal; margin-bottom: 22px; }
+  .visit .tel { font-family: var(--display); font-size: 1.8rem; font-weight: 700; text-decoration: none; display: inline-block; margin-bottom: 22px; }
+  table.hours { width: 100%; border-collapse: collapse; }
+  .hours th, .hours td { text-align: left; padding: 11px 0; border-bottom: 1px solid #2a241a; font-weight: 400; }
+  .hours td { text-align: right; }
+  .hours tr.today th, .hours tr.today td { color: var(--gold-bright); font-weight: 700; }
+  .hours tr.today th::after { content: " (today)"; font-weight: 400; color: var(--muted); }
+  .extras { margin-top: 26px; padding: 0; list-style: none; color: var(--muted); }
+  .extras li { padding: 3px 0; }
+  @media (max-width: 860px) { .visit-grid { grid-template-columns: 1fr; gap: 36px; } }
+
+  footer { background: var(--black); border-top: 1px solid var(--gold-deep); padding: 28px 0 36px; text-align: center; color: var(--muted); font-size: .95rem; }
+  footer strong { font-family: var(--display); color: var(--gold-bright); font-size: 1.15rem; }
 
   @media (prefers-reduced-motion: reduce) {
     .pole { animation: none; }
-    .item { transition: none; }
+    html { scroll-behavior: auto; }
   }
 </style>
 </head>
@@ -139,95 +193,175 @@
 
 <div class="pole" aria-hidden="true"></div>
 
-<header>
-  <h1>Gallery</h1>
-  <p>A look inside the shop and at the work we turn out. Select any photo to view it full size.</p>
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top">Royal Barbers</a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#prices">Prices</a></li>
+      <li><a href="#work">Our work</a></li>
+      <li><a href="#visit">Find us</a></li>
+    </ul>
+    <a class="call-btn" href="tel:07828983835">Call 07828 983835</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <img src="https://lh3.googleusercontent.com/grass-cs/AABkmLenAcFthcm65useGt6W3K88VQhR5Td-sGW3hRjLx8SlOckL8gouNFB3LjjGMRjnq3RhdFiYFZC70hPwRByQmOfc4GUYJWtgJG-NPfbO3ohDsjO3X8SlUb_K7lwXqZ6I99J2jlWg=w1600" alt="Royal Barbers shopfront on Haydons Road, Wimbledon">
+  <div class="wrap">
+    <h1>Royal Barbers</h1>
+    <p class="lead">Haircuts, skin fades, beard trims and hot towel shaves on Haydons Road, Wimbledon.</p>
+    <div class="btns">
+      <a class="btn solid" href="#prices">See prices</a>
+      <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=Royal+Barbers+323A+Haydons+Road+Wimbledon+SW19+8LA" target="_blank" rel="noopener">Get directions</a>
+    </div>
+  </div>
 </header>
 
-<main>
-  <div class="grid" id="grid"></div>
-</main>
-
-<div class="pole bottom" aria-hidden="true"></div>
-
-<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Image viewer">
-  <button class="close" id="close" aria-label="Close">&times;</button>
-  <button class="prev" id="prev" aria-label="Previous image">&#8249;</button>
-  <figure>
-    <img id="lbImg" alt="">
-    <figcaption id="lbCap"></figcaption>
-  </figure>
-  <button class="next" id="next" aria-label="Next image">&#8250;</button>
+<div class="strip">
+  <div class="wrap">
+    <ul>
+      <li>No appointment needed</li>
+      <li>First come, first served</li>
+      <li>Free Wi-Fi</li>
+      <li>Hair products sold</li>
+    </ul>
+  </div>
 </div>
 
+<section id="about">
+  <div class="wrap about">
+    <div>
+      <h2>Walk in, sit down, walk out sharp</h2>
+      <p>Royal Barbers is a barbershop at 323A Haydons Road in Wimbledon. There is nothing to book: come in when you like and you will be seen in turn.</p>
+      <p>Whether you need a quick all over one grade, a skin fade, or a full cut with a beard trim and shape up, the full price list is below. We also sell hair products, and the Wi-Fi is free while you wait.</p>
+    </div>
+    <div class="about-photos">
+      <figure class="frame interior">
+        <img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9STelOHNQ6TdI1AbWJdUtM5Oaq6ZWSZbP_5pOfYK5bMc9MldOxQU004VZ3nr5XNT0CsspftK3r6TybcJQEN0A049m1vvcQsBOyM05talk1sviIInqIegc7x62OzJ1LqUbaH4-4E=w1200" alt="Inside Royal Barbers" loading="lazy">
+        <figcaption>Inside the shop</figcaption>
+      </figure>
+      <figure class="frame owner">
+        <img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9Q_FvANsyvJ2YiD8ZkK7HKtAKsnsNH9sbEnbWO2ZwRo36lcCcQHGTqv3_OjLDwDJPxWSDKpX9E5YyHY8t-VzF3L8Q0ilpt7tgTcVnLRFyaZ10HOeBv4duNFDTvbbxb8a92qciyuPw=w1200" alt="The owner of Royal Barbers" loading="lazy">
+        <figcaption>The owner</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="prices" id="prices">
+  <div class="wrap">
+    <div class="head">
+      <h2>Price list</h2>
+      <p>No appointment needed. First come, first served.</p>
+    </div>
+    <div class="price-grid">
+      <div>
+        <div class="group">
+          <h3>Haircuts</h3>
+          <ul>
+            <li><span class="name">All Over One Grade</span><span class="dots"></span><span class="price">£13</span></li>
+            <li><span class="name">Kids Haircut Under 12</span><span class="dots"></span><span class="price">£16</span></li>
+            <li><span class="name">O.A.P.</span><span class="dots"></span><span class="price">£16</span></li>
+            <li><span class="name">Normal Haircut</span><span class="dots"></span><span class="price">£18</span></li>
+            <li><span class="name">Skin Fade</span><span class="dots"></span><span class="price">£20</span></li>
+            <li><span class="name">Haircut &amp; Wash</span><span class="dots"></span><span class="price">£23</span></li>
+          </ul>
+        </div>
+        <div class="group">
+          <h3>Cut &amp; beard</h3>
+          <ul>
+            <li><span class="name">All Over, Beard Trim &amp; Shape Up</span><span class="dots"></span><span class="price">£23</span></li>
+            <li><span class="name">Haircut, Beard Trim &amp; Shape Up</span><span class="dots"></span><span class="price">£27</span></li>
+            <li><span class="name">Skin Fade, Beard Trim &amp; Shape Up</span><span class="dots"></span><span class="price">£29</span></li>
+          </ul>
+        </div>
+        <div class="group">
+          <h3>Beard &amp; extras</h3>
+          <ul>
+            <li><span class="name">Beard Trim &amp; Shape Up</span><span class="dots"></span><span class="price">£11</span></li>
+            <li><span class="name">Hot Towel &amp; Shave</span><span class="dots"></span><span class="price">£19</span></li>
+            <li><span class="name">Ear Candle</span><span class="dots"></span><span class="price">£10</span></li>
+            <li><span class="name">Ear &amp; Nose Wax</span><span class="dots"></span><span class="price">£5</span></li>
+          </ul>
+        </div>
+      </div>
+      <figure class="frame menu-photo">
+        <img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9RS8ErmR93iuzaTYvwvfHAJs5D2NCCbycTVENFOvjOhVec-kdU_vGISPzkYS6X27ScG9srIu-TQISY5yml6gw_falGU7YWfP9f8o0tBcZYBDCIeTBPTl5IobnasDpJ6tSieSpdCgFVLmUOF=w1200" alt="The Royal Barbers menu board" loading="lazy">
+        <figcaption>The menu in the shop</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap work">
+    <div>
+      <h2>The finished result</h2>
+      <p>A freshly finished cut on one of our clients. Pick a service from the price list and come in whenever suits you.</p>
+      <div class="btns" style="margin-top:24px">
+        <a class="btn solid" href="tel:07828983835">Call 07828 983835</a>
+      </div>
+    </div>
+    <figure class="frame">
+      <img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9ShyWF3VGDdt7fJ22nHF7uXiFStWTiGAgthmzrVrLVWvGo0vwBcRpCwbV9pkSLOtgHVOm-CZc9HDo9uAVMvbEx-svZtJB8Y27IFbDN4C3WwQ2CcD8Esq-7MV7MpFaHI8YMyEClp=w1200" alt="A finished haircut on a Royal Barbers client" loading="lazy">
+      <figcaption>Finished result</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="visit" id="visit">
+  <div class="wrap">
+    <h2>Find us</h2>
+    <div class="visit-grid">
+      <div>
+        <h3>Address</h3>
+        <address>Royal Barbers<br>323A Haydons Road<br>Wimbledon, London<br>SW19 8LA</address>
+        <h3>Telephone</h3>
+        <a class="tel" href="tel:07828983835">07828 983835</a>
+        <div class="btns">
+          <a class="btn solid" href="https://www.google.com/maps/search/?api=1&query=Royal+Barbers+323A+Haydons+Road+Wimbledon+SW19+8LA" target="_blank" rel="noopener">Open in Google Maps</a>
+        </div>
+        <ul class="extras">
+          <li>No appointment needed</li>
+          <li>First come, first served</li>
+          <li>Free Wi-Fi available</li>
+          <li>We sell hair products</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Opening hours</h3>
+        <table class="hours" id="hours">
+          <tbody>
+            <tr data-day="1"><th scope="row">Monday</th><td>09:00 – 19:00</td></tr>
+            <tr data-day="2"><th scope="row">Tuesday</th><td>09:00 – 19:00</td></tr>
+            <tr data-day="3"><th scope="row">Wednesday</th><td>09:00 – 19:00</td></tr>
+            <tr data-day="4"><th scope="row">Thursday</th><td>09:00 – 19:00</td></tr>
+            <tr data-day="5"><th scope="row">Friday</th><td>09:00 – 19:00</td></tr>
+            <tr data-day="6"><th scope="row">Saturday</th><td>09:00 – 19:00</td></tr>
+            <tr data-day="0"><th scope="row">Sunday</th><td>09:30 – 16:30</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <strong>Royal Barbers</strong><br>
+    323A Haydons Road, Wimbledon, London SW19 8LA &nbsp;|&nbsp; <a href="tel:07828983835">07828 983835</a>
+  </div>
+</footer>
+<div class="pole" aria-hidden="true"></div>
+
 <script>
-  // Add, remove or reorder photos here.
-  const photos = [
-    { alt: "Exterior",        src: "https://lh3.googleusercontent.com/grass-cs/AABkmLenAcFthcm65useGt6W3K88VQhR5Td-sGW3hRjLx8SlOckL8gouNFB3LjjGMRjnq3RhdFiYFZC70hPwRByQmOfc4GUYJWtgJG-NPfbO3ohDsjO3X8SlUb_K7lwXqZ6I99J2jlWg=s0" },
-    { alt: "Interior",        src: "https://lh3.googleusercontent.com/gps-cs-s/ANWiy9STelOHNQ6TdI1AbWJdUtM5Oaq6ZWSZbP_5pOfYK5bMc9MldOxQU004VZ3nr5XNT0CsspftK3r6TybcJQEN0A049m1vvcQsBOyM05talk1sviIInqIegc7x62OzJ1LqUbaH4-4E=s0" },
-    { alt: "The Owner",       src: "https://lh3.googleusercontent.com/gps-cs-s/ANWiy9Q_FvANsyvJ2YiD8ZkK7HKtAKsnsNH9sbEnbWO2ZwRo36lcCcQHGTqv3_OjLDwDJPxWSDKpX9E5YyHY8t-VzF3L8Q0ilpt7tgTcVnLRFyaZ10HOeBv4duNFDTvbbxb8a92qciyuPw=s0" },
-    { alt: "Menu",            src: "https://lh3.googleusercontent.com/gps-cs-s/ANWiy9RS8ErmR93iuzaTYvwvfHAJs5D2NCCbycTVENFOvjOhVec-kdU_vGISPzkYS6X27ScG9srIu-TQISY5yml6gw_falGU7YWfP9f8o0tBcZYBDCIeTBPTl5IobnasDpJ6tSieSpdCgFVLmUOF=s0" },
-    { alt: "Finished Result", src: "https://lh3.googleusercontent.com/gps-cs-s/ANWiy9ShyWF3VGDdt7fJ22nHF7uXiFStWTiGAgthmzrVrLVWvGo0vwBcRpCwbV9pkSLOtgHVOm-CZc9HDo9uAVMvbEx-svZtJB8Y27IFbDN4C3WwQ2CcD8Esq-7MV7MpFaHI8YMyEClp=s0" }
-  ];
-
-  const grid = document.getElementById("grid");
-  const lb = document.getElementById("lb");
-  const lbImg = document.getElementById("lbImg");
-  const lbCap = document.getElementById("lbCap");
-  let current = 0;
-  let lastFocus = null;
-
-  photos.forEach((p, i) => {
-    const btn = document.createElement("button");
-    btn.className = "item";
-    btn.type = "button";
-    btn.setAttribute("aria-label", "Open " + p.alt);
-
-    const img = document.createElement("img");
-    img.src = p.src.replace("=s0", "=w800");   // smaller version for the grid
-    img.alt = p.alt;
-    img.loading = "lazy";
-
-    const cap = document.createElement("span");
-    cap.textContent = p.alt;
-
-    btn.append(img, cap);
-    btn.addEventListener("click", () => open(i));
-    grid.appendChild(btn);
-  });
-
-  function show(i) {
-    current = (i + photos.length) % photos.length;
-    lbImg.src = photos[current].src;
-    lbImg.alt = photos[current].alt;
-    lbCap.textContent = photos[current].alt;
-    const count = document.createElement("small");
-    count.textContent = (current + 1) + " of " + photos.length;
-    lbCap.appendChild(count);
-  }
-  function open(i) {
-    lastFocus = document.activeElement;
-    show(i);
-    lb.classList.add("open");
-    document.getElementById("close").focus();
-    document.body.style.overflow = "hidden";
-  }
-  function close() {
-    lb.classList.remove("open");
-    document.body.style.overflow = "";
-    if (lastFocus) lastFocus.focus();
-  }
-
-  document.getElementById("close").addEventListener("click", close);
-  document.getElementById("prev").addEventListener("click", () => show(current - 1));
-  document.getElementById("next").addEventListener("click", () => show(current + 1));
-  lb.addEventListener("click", e => { if (e.target === lb) close(); });
-  document.addEventListener("keydown", e => {
-    if (!lb.classList.contains("open")) return;
-    if (e.key === "Escape") close();
-    if (e.key === "ArrowLeft") show(current - 1);
-    if (e.key === "ArrowRight") show(current + 1);
-  });
+  // Highlight today's opening hours
+  (function () {
+    var today = String(new Date().getDay());
+    var row = document.querySelector('#hours tr[data-day="' + today + '"]');
+    if (row) row.classList.add("today");
+  })();
 </script>
 </body>
 </html>
