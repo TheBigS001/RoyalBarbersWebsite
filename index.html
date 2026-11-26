@@ -5,148 +5,190 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Royal Barbers | Barbershop on Haydons Road, Wimbledon SW19</title>
 <meta name="description" content="Royal Barbers, 323A Haydons Road, Wimbledon SW19 8LA. Haircuts, skin fades, beard trims and hot towel shaves. Walk-ins welcome, no appointment needed. Call 07828 983835.">
+<meta name="theme-color" content="#1c1b19">
+<link rel="canonical" href="https://thebigs001.github.io/RoyalBarbersWebsite/">
 <meta property="og:type" content="website">
+<meta property="og:locale" content="en_GB">
 <meta property="og:title" content="Royal Barbers, Wimbledon">
 <meta property="og:description" content="Barbershop at 323A Haydons Road, Wimbledon. Walk-ins welcome, no appointment needed.">
 <meta property="og:url" content="https://thebigs001.github.io/RoyalBarbersWebsite/">
 <meta property="og:image" content="https://lh3.googleusercontent.com/grass-cs/AABkmLenAcFthcm65useGt6W3K88VQhR5Td-sGW3hRjLx8SlOckL8gouNFB3LjjGMRjnq3RhdFiYFZC70hPwRByQmOfc4GUYJWtgJG-NPfbO3ohDsjO3X8SlUb_K7lwXqZ6I99J2jlWg=w1200">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BarberShop","name":"Royal Barbers","telephone":"+447828983835","url":"https://thebigs001.github.io/RoyalBarbersWebsite/","address":{"@type":"PostalAddress","streetAddress":"323A Haydons Road","addressLocality":"Wimbledon, London","postalCode":"SW19 8LA","addressCountry":"GB"},"amenityFeature":[{"@type":"LocationFeatureSpecification","name":"Free Wi-Fi","value":true}]}
+{"@context":"https://schema.org","@type":"BarberShop","name":"Royal Barbers","telephone":"+447828983835","url":"https://thebigs001.github.io/RoyalBarbersWebsite/","image":"https://lh3.googleusercontent.com/grass-cs/AABkmLenAcFthcm65useGt6W3K88VQhR5Td-sGW3hRjLx8SlOckL8gouNFB3LjjGMRjnq3RhdFiYFZC70hPwRByQmOfc4GUYJWtgJG-NPfbO3ohDsjO3X8SlUb_K7lwXqZ6I99J2jlWg=w1200","address":{"@type":"PostalAddress","streetAddress":"323A Haydons Road","addressLocality":"Wimbledon, London","postalCode":"SW19 8LA","addressCountry":"GB"},"geo":{"@type":"GeoCoordinates","latitude":51.4265365,"longitude":-0.1902247},"hasMap":"https://www.google.com/maps/search/Royal+Barbers/@51.4265365,-0.1902247,19z","amenityFeature":[{"@type":"LocationFeatureSpecification","name":"Free Wi-Fi","value":true}]}
 </script>
+<!-- Opening hours are deliberately NOT in the structured data above: add openingHoursSpecification only once the shop confirms them. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;600&display=swap" rel="stylesheet">
 <style>
+/* Design rationale: the shop's own sign is black with yellow lettering in a
+   condensed sans. Barlow Condensed echoes that lettering for headings and prices;
+   Barlow carries the text. Yellow is used as a signage accent (bands, rules, focus),
+   never as a gradient or glow. Light paper sections give the photographs room. */
 :root{
-  --ink:#1c1b19; --ink2:#2a2825; --paper:#f5f1e7; --white:#fff; --line:#d9d2c0;
-  --mustard:#e2ae1b; --mustard-dk:#9a7300; --muted:#5f5a4d;
-  --head:Georgia,"Times New Roman",serif;
-  --body:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  --pad:clamp(18px,4vw,40px);
+  --ink:#1c1b19; --ink2:#2c2a26; --paper:#f4f0e6; --white:#fff; --rule:#d6cfbb;
+  --yellow:#e2ae1b; --muted:#59544a; --soft:#d9d3c2;
+  --head:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+  --body:Barlow,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --pad:clamp(18px,4.5vw,48px); --bar:60px; --r:2px;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:76px;-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--paper);color:var(--ink);font:1.0625rem/1.6 var(--body)}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--bar) + 12px);-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 1.0625rem/1.6 var(--body)}
 img{display:block;max-width:100%;height:auto}
 a{color:inherit}
-.wrap{max-width:1100px;margin:0 auto;padding:0 var(--pad)}
-h1,h2,h3{font-family:var(--head);line-height:1.15;margin:0;font-weight:700}
-h2{font-size:clamp(1.75rem,3.6vw,2.4rem);margin-bottom:.5em}
 p{margin:0 0 1em}
-:focus-visible{outline:3px solid var(--mustard);outline-offset:3px}
-.btn{display:inline-block;padding:12px 24px;border:2px solid var(--ink);background:transparent;color:var(--ink);font:700 1rem var(--body);text-decoration:none;cursor:pointer;border-radius:3px}
-.btn:hover{background:var(--ink);color:var(--white)}
-.btn.y{background:var(--mustard);border-color:var(--mustard);color:var(--ink)}
+h1,h2,h3{font-family:var(--head);font-weight:700;line-height:1;margin:0;text-transform:uppercase;letter-spacing:.02em}
+h2{font-size:clamp(2rem,4.2vw,3rem);margin-bottom:.45em}
+h3{font-size:1.25rem;letter-spacing:.06em}
+.wrap{max-width:1160px;margin:0 auto;padding:0 var(--pad)}
+:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
+.paper :focus-visible{outline-color:var(--ink)}
+.skip{position:absolute;left:8px;top:-60px;background:var(--yellow);color:var(--ink);padding:10px 14px;z-index:100;font-weight:600}
+.skip:focus{top:8px}
+.btn{display:inline-block;min-height:48px;padding:12px 22px;border:2px solid currentColor;border-radius:var(--r);font:600 1rem/1.4 var(--body);text-decoration:none;cursor:pointer;background:transparent;color:inherit;text-align:center}
+.btn.y{background:var(--yellow);border-color:var(--yellow);color:var(--ink)}
 .btn.y:hover{background:var(--white);border-color:var(--white)}
-.on-dark .btn{border-color:var(--white);color:var(--white)}
-.on-dark .btn:hover{background:var(--white);color:var(--ink)}
-.on-dark .btn.y{color:var(--ink);border-color:var(--mustard)}
-.on-dark .btn.y:hover{background:var(--white);border-color:var(--white)}
+.btn.o:hover{background:var(--white);border-color:var(--white);color:var(--ink)}
+.btn.k{background:var(--ink);border-color:var(--ink);color:var(--white)}
+.btn.k:hover{background:var(--yellow);border-color:var(--yellow);color:var(--ink)}
 
 /* header */
-header.bar{position:sticky;top:0;z-index:50;background:var(--ink);color:var(--white);border-bottom:3px solid var(--mustard)}
-.bar .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
-.logo{font:700 1.3rem var(--head);text-decoration:none;color:var(--white);white-space:nowrap}
-.bar ul{display:flex;gap:6px;list-style:none;margin:0;padding:0}
-.bar ul a{display:block;padding:8px 12px;text-decoration:none;font-size:.97rem;border-bottom:2px solid transparent}
-.bar ul a:hover{color:var(--mustard)}
-.bar ul a[aria-current=true]{border-color:var(--mustard)}
-.bar .call{background:var(--mustard);color:var(--ink);padding:9px 16px;font-weight:700;text-decoration:none;border-radius:3px;white-space:nowrap}
-.bar .call:hover{background:var(--white)}
-.menu-btn{display:none;background:none;border:2px solid var(--white);color:var(--white);border-radius:3px;padding:8px 12px;font:700 .95rem var(--body);cursor:pointer}
-.right{display:flex;align-items:center;gap:12px}
+.bar{position:sticky;top:0;z-index:50;height:var(--bar);background:var(--ink);color:var(--white);border-bottom:3px solid var(--yellow)}
+.bar .wrap{height:100%;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.logo{font:700 1.6rem/1 var(--head);text-transform:uppercase;letter-spacing:.06em;text-decoration:none;white-space:nowrap}
+.logo span{color:var(--yellow)}
+.bar nav ul{display:flex;gap:2px;list-style:none;margin:0;padding:0}
+.bar nav a{display:block;padding:10px 14px;text-decoration:none;font-weight:600;font-size:.95rem;border-bottom:3px solid transparent}
+.bar nav a:hover{color:var(--yellow)}
+.bar nav a[aria-current=true]{border-bottom-color:var(--yellow)}
+.tools{display:flex;align-items:center;gap:8px}
+.call{background:var(--yellow);color:var(--ink);font-weight:600;text-decoration:none;padding:9px 16px;border-radius:var(--r);white-space:nowrap}
+.call:hover{background:var(--white)}
+.mb{display:none;min-height:42px;padding:0 14px;background:transparent;color:var(--white);border:2px solid var(--white);border-radius:var(--r);font:600 .95rem var(--body);cursor:pointer}
 @media(max-width:820px){
-  .menu-btn{display:block}
-  .bar nav{position:absolute;left:0;right:0;top:100%;background:var(--ink);border-bottom:3px solid var(--mustard);display:none}
-  .bar nav.open{display:block}
-  .bar ul{flex-direction:column;gap:0;padding:6px var(--pad) 14px}
-  .bar ul a{padding:14px 0;border-bottom:1px solid var(--ink2);font-size:1.05rem}
-  .bar ul a[aria-current=true]{border-bottom-color:var(--mustard)}
+  .mb{display:block}
+  .bar nav{position:absolute;left:0;right:0;top:100%;background:var(--ink);border-bottom:3px solid var(--yellow);padding:4px var(--pad) 18px;display:none}
+  .bar nav.open{display:block;animation:drop .18s ease-out}
+  .bar nav ul{flex-direction:column}
+  .bar nav a{padding:15px 0;font-size:1.15rem;border-bottom:1px solid var(--ink2)}
+  .bar nav a[aria-current=true]{border-bottom-color:var(--yellow)}
+  .navtel{display:block;margin-top:14px;font:700 1.7rem var(--head);letter-spacing:.04em;color:var(--yellow);text-decoration:none}
 }
-@media(max-width:380px){.bar .call{display:none}}
+@media(min-width:821px){.navtel{display:none}}
+@media(max-width:360px){.logo{font-size:1.3rem}.call{padding:9px 12px}.mb{padding:0 10px}}
+@keyframes drop{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
 
 /* hero */
 .hero{display:grid;grid-template-columns:5fr 7fr;background:var(--ink);color:var(--white)}
-.hero .txt{padding:clamp(32px,6vw,72px) var(--pad);display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
-.hero h1{font-size:clamp(2.2rem,4.6vw,3.4rem);margin-bottom:.35em}
-.hero p{font-size:1.2rem;max-width:30ch;color:#e8e3d4}
-.hero .btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px}
-.hero .photo{min-height:360px;margin:0}
-.hero .photo img{width:100%;height:100%;object-fit:cover;object-position:center}
-@media(max-width:820px){.hero{grid-template-columns:1fr}.hero .photo{order:-1;min-height:0;aspect-ratio:4/3}}
+.hero .txt{padding:clamp(36px,6vw,80px) var(--pad) clamp(36px,6vw,80px) max(var(--pad),calc((100vw - 1160px)/2 + var(--pad)));display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
+.hero h1{font-size:clamp(3rem,6vw,4.8rem);letter-spacing:.03em;margin-bottom:.3em}
+.hero h1 span{color:var(--yellow)}
+.hero p{font-size:1.2rem;max-width:26ch;color:#e6e1d2;margin-bottom:1.4em}
+.hero .acts{display:flex;flex-wrap:wrap;gap:10px}
+.hero figure{margin:0;position:relative;min-height:420px}
+.hero figure img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 55%}
+@media(max-width:820px){
+  .hero{grid-template-columns:1fr}
+  .hero figure{order:-1;min-height:0;aspect-ratio:4/3}
+  .hero .txt{padding:32px var(--pad) 36px}
+  .hero p{max-width:32ch}
+}
+/* sign strip: borrowed from the shop's own signage */
+.sign{background:var(--yellow);color:var(--ink)}
+.sign ul{list-style:none;margin:0 auto;padding:0;max-width:1160px;display:flex;flex-wrap:wrap}
+.sign li{flex:1 1 auto;padding:14px var(--pad);font:700 1.25rem/1.1 var(--head);letter-spacing:.07em;text-transform:uppercase;text-align:center;border-left:2px solid var(--ink)}
+.sign li:first-child{border-left:0}
+@media(max-width:820px){.sign li{flex-basis:50%;padding:12px 8px;font-size:1.1rem}.sign li:nth-child(odd){border-left:0}.sign li:nth-child(n+3){border-top:2px solid var(--ink)}}
 
-/* info band */
-.info{background:var(--mustard);color:var(--ink)}
-.info ul{list-style:none;margin:0 auto;padding:0;max-width:1100px;display:grid;grid-template-columns:repeat(4,1fr)}
-.info li{padding:16px var(--pad);font-weight:700;border-left:2px solid rgba(28,27,25,.25)}
-.info li:first-child{border-left:0}
-@media(max-width:820px){.info ul{grid-template-columns:1fr 1fr}.info li:nth-child(odd){border-left:0}.info li:nth-child(n+3){border-top:2px solid rgba(28,27,25,.25)}}
-
-section{padding:clamp(48px,8vw,88px) 0}
+section{padding:clamp(56px,8vw,104px) 0}
 
 /* about */
-.about{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,64px);align-items:center}
-.about p{max-width:46ch}
-.shot{margin:0}
-.shot button{display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in}
-.shot img{width:100%}
-.pair{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:start}
-@media(max-width:820px){.about{grid-template-columns:1fr}}
+.about{display:grid;grid-template-columns:repeat(12,1fr);gap:0 24px;align-items:start}
+.about .copy{grid-column:1/6;padding-top:8px}
+.about .copy p{max-width:40ch}
+.about .main{grid-column:6/13;margin:0}
+.about .second{grid-column:1/5;margin:-72px 0 0;position:relative;border:6px solid var(--paper);grid-row:2}
+.about .small-note{grid-column:6/13;grid-row:2;align-self:end;font-size:.95rem;color:var(--muted);padding-top:12px;margin:0}
+.about img{width:100%}
+.about .main img{aspect-ratio:4/3;object-fit:cover}
+.about .second img{aspect-ratio:3/4;object-fit:cover;object-position:50% 25%}
+@media(max-width:820px){
+  .about{display:block}
+  .about .second{width:60%;margin:-48px 0 0 auto}
+  .about .main{margin-top:28px}
+  .about .small-note{display:none}
+}
+.shot{padding:0;border:0;background:none;display:block;width:100%;cursor:zoom-in}
 
 /* prices */
-.prices{background:var(--white);border-block:1px solid var(--line)}
-.price-grid{display:grid;grid-template-columns:1fr 340px;gap:clamp(28px,5vw,64px);align-items:start}
-.plist{list-style:none;margin:0;padding:0;border-top:3px solid var(--ink)}
-.plist li{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-bottom:1px solid var(--line)}
-.plist .p{font:700 1.15rem var(--head);white-space:nowrap}
-.plist li:last-child{border-bottom:3px solid var(--ink)}
+.prices{background:var(--white);border-block:1px solid var(--rule)}
+.pgrid{display:grid;grid-template-columns:7fr 4fr;gap:clamp(32px,6vw,80px);align-items:start}
+.pintro{color:var(--muted);max-width:44ch}
+.plist{list-style:none;margin:0;padding:0;border-top:4px solid var(--ink)}
+.plist li{display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--rule);font-size:1.125rem}
+.plist .p{font:700 1.8rem/1 var(--head);letter-spacing:.02em;white-space:nowrap}
+.plist li:last-child{border-bottom:4px solid var(--ink)}
+.board{margin:0}
 .board figcaption{font-size:.92rem;color:var(--muted);margin-top:8px}
-@media(max-width:820px){.price-grid{grid-template-columns:1fr}.board{max-width:340px}}
+@media(max-width:820px){.pgrid{grid-template-columns:1fr}.board{max-width:320px}}
 
-/* gallery */
-.gallery{columns:3;column-gap:12px}
-.gallery button{display:block;width:100%;margin:0 0 12px;padding:0;border:0;background:var(--line);cursor:zoom-in;break-inside:avoid}
-.gallery img{width:100%}
-@media(max-width:820px){.gallery{columns:2}}
-@media(max-width:420px){.gallery{column-gap:8px}.gallery button{margin-bottom:8px}}
+/* gallery: justified rows, photos keep their own proportions */
+.gal{display:flex;flex-wrap:wrap;gap:10px}
+.gal::after{content:"";flex-grow:9999}
+.gal button{--r:1;--h:230px;flex:calc(var(--r)*100) 1 calc(var(--r)*var(--h));aspect-ratio:var(--r);padding:0;border:0;background:var(--soft);cursor:zoom-in;overflow:hidden}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform .35s}
+.gal button:hover img{transform:scale(1.03)}
+@media(max-width:820px){.gal button{--h:150px}.gal{gap:8px}}
+@media(max-width:420px){.gal button{--h:120px}}
 
 /* visit */
 .visit{background:var(--ink);color:var(--white)}
-.visit h2{color:var(--white)}
-.vgrid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,64px)}
-.visit h3{font-size:1.25rem;color:var(--mustard);margin:0 0 6px}
-.visit address{font-style:normal;margin-bottom:22px}
-.visit .tel{font:700 1.8rem var(--head);text-decoration:none;display:inline-block;margin-bottom:20px}
-.visit .tel:hover{color:var(--mustard)}
-.walk{border-left:4px solid var(--mustard);padding:2px 0 2px 16px;margin:24px 0 0}
+.vgrid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,80px)}
+.visit h3{color:var(--yellow);margin:0 0 8px}
+.visit address{font-style:normal;font-size:1.15rem;margin-bottom:26px;line-height:1.5}
+.tel{display:inline-block;font:700 clamp(2.2rem,5vw,3rem)/1 var(--head);letter-spacing:.03em;text-decoration:none;margin-bottom:6px}
+.tel:hover{color:var(--yellow)}
+.maplink{display:inline-block;margin-top:16px;font-weight:600;color:var(--white);text-underline-offset:4px;text-decoration-thickness:2px;padding:10px 0}
+.maplink:hover{color:var(--yellow)}
+.walk{margin:30px 0 0;padding:4px 0 4px 18px;border-left:5px solid var(--yellow);font-size:1.15rem}
+.walk strong{display:block;font:700 1.5rem/1.1 var(--head);text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px}
 .walk p{margin:0}
-.extra{list-style:none;padding:0;margin:20px 0 0;color:#d6d0be}
+.fac{list-style:none;margin:22px 0 0;padding:0;color:#d6d0be}
+.fac li{padding:2px 0}
 table{width:100%;border-collapse:collapse}
-th,td{padding:11px 0;border-bottom:1px solid #3d3a34;text-align:left;font-weight:400}
+th,td{padding:12px 0;border-bottom:1px solid #46433b;text-align:left;font-weight:400;font-size:1.1rem}
 td{text-align:right}
-tr.today th,tr.today td{color:var(--mustard);font-weight:700}
-tr.today th::after{content:" (today)";font-weight:400;color:#d6d0be}
+tr.today th,tr.today td{font-weight:600;color:var(--yellow)}
+tr.today th::before{content:"";display:inline-block;width:8px;height:8px;background:var(--yellow);margin-right:10px}
 @media(max-width:820px){.vgrid{grid-template-columns:1fr}}
 
 footer{background:#121110;color:#cfc9b8;padding:26px 0;font-size:.95rem}
-footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;align-items:center;justify-content:space-between}
-footer strong{font:700 1.1rem var(--head);color:var(--white)}
-.pole{display:inline-block;width:46px;height:12px;vertical-align:middle;margin-right:10px;background:repeating-linear-gradient(-45deg,var(--mustard) 0 6px,#121110 6px 12px,var(--white) 12px 18px,#121110 18px 24px)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:8px 28px;justify-content:space-between;align-items:center}
+footer strong{font:700 1.3rem var(--head);text-transform:uppercase;letter-spacing:.06em;color:var(--white)}
 
 /* lightbox */
-dialog{border:0;padding:0;background:transparent;max-width:100vw;max-height:100vh;width:100vw;height:100vh}
-dialog::backdrop{background:rgba(10,10,9,.92)}
-dialog .stage{width:100%;height:100%;display:flex;align-items:center;justify-content:center;padding:56px 12px 20px}
-dialog img{max-width:100%;max-height:100%;width:auto;object-fit:contain}
-dialog .x{position:absolute;top:10px;right:10px;background:var(--white);color:var(--ink);border:0;border-radius:3px;font:700 1rem var(--body);padding:10px 16px;cursor:pointer}
-dialog .nv{position:absolute;top:50%;transform:translateY(-50%);background:var(--white);color:var(--ink);border:0;border-radius:3px;font:700 1.4rem var(--body);width:44px;height:56px;cursor:pointer}
-dialog .pv{left:6px}dialog .nx{right:6px}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+dialog{border:0;padding:0;background:transparent;width:100vw;height:100dvh;max-width:none;max-height:none}
+dialog::backdrop{background:rgba(12,11,10,.94)}
+.stage{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:64px 56px 20px}
+.stage img{max-width:100%;max-height:calc(100% - 28px);object-fit:contain}
+.stage p{margin:10px 0 0;color:#cfc9b8;font-size:.9rem}
+.lb{position:absolute;min-width:48px;min-height:48px;background:var(--white);color:var(--ink);border:0;border-radius:var(--r);font:600 1rem var(--body);cursor:pointer}
+.lb:hover{background:var(--yellow)}
+.lbx{top:10px;right:10px;padding:0 18px}
+.lbp,.lbn{top:50%;transform:translateY(-50%);font-size:1.6rem}
+.lbp{left:6px}.lbn{right:6px}
+@media(max-width:600px){.stage{padding:64px 8px 20px}.lbp,.lbn{top:auto;bottom:10px;transform:none}.lbp{left:10px}.lbn{right:10px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 
 <header class="bar">
   <div class="wrap">
-    <a class="logo" href="#top">Royal Barbers</a>
-    <div class="right">
+    <a class="logo" href="#top">Royal <span>Barbers</span></a>
+    <div class="tools">
       <nav id="nav" aria-label="Main">
         <ul>
           <li><a href="#about">About</a></li>
@@ -154,46 +196,49 @@ dialog .pv{left:6px}dialog .nx{right:6px}
           <li><a href="#work">Our work</a></li>
           <li><a href="#visit">Find us</a></li>
         </ul>
+        <a class="navtel" href="tel:07828983835">07828 983835</a>
       </nav>
-      <a class="call" href="tel:07828983835">Call</a>
-      <button class="menu-btn" id="mb" aria-expanded="false" aria-controls="nav" aria-label="Open menu">Menu</button>
+      <a class="call" href="tel:07828983835" aria-label="Call Royal Barbers on 07828 983835">Call</a>
+      <button class="mb" id="mb" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
     </div>
   </div>
 </header>
 
-<main id="top">
-<div class="hero on-dark">
+<main id="main">
+<div class="hero" id="top">
   <div class="txt">
-    <h1>Royal Barbers</h1>
-    <p>Your local barbershop on Haydons Road, Wimbledon. Walk in, no appointment needed.</p>
-    <div class="btns">
+    <h1>Royal <span>Barbers</span></h1>
+    <p>The local barbershop on Haydons Road, Wimbledon. Walk-ins welcome.</p>
+    <div class="acts">
       <a class="btn y" href="#prices">See prices</a>
-      <a class="btn" href="#visit">Find the shop</a>
+      <a class="btn o" href="tel:07828983835">Call 07828 983835</a>
     </div>
   </div>
-  <figure class="photo"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLenAcFthcm65useGt6W3K88VQhR5Td-sGW3hRjLx8SlOckL8gouNFB3LjjGMRjnq3RhdFiYFZC70hPwRByQmOfc4GUYJWtgJG-NPfbO3ohDsjO3X8SlUb_K7lwXqZ6I99J2jlWg=w1600" alt="The Royal Barbers shopfront at 323A Haydons Road, Wimbledon" width="1600" height="1067"></figure>
+  <figure>
+    <img src="https://lh3.googleusercontent.com/grass-cs/AABkmLenAcFthcm65useGt6W3K88VQhR5Td-sGW3hRjLx8SlOckL8gouNFB3LjjGMRjnq3RhdFiYFZC70hPwRByQmOfc4GUYJWtgJG-NPfbO3ohDsjO3X8SlUb_K7lwXqZ6I99J2jlWg=w1400"
+      srcset="https://lh3.googleusercontent.com/grass-cs/AABkmLenAcFthcm65useGt6W3K88VQhR5Td-sGW3hRjLx8SlOckL8gouNFB3LjjGMRjnq3RhdFiYFZC70hPwRByQmOfc4GUYJWtgJG-NPfbO3ohDsjO3X8SlUb_K7lwXqZ6I99J2jlWg=w800 800w,https://lh3.googleusercontent.com/grass-cs/AABkmLenAcFthcm65useGt6W3K88VQhR5Td-sGW3hRjLx8SlOckL8gouNFB3LjjGMRjnq3RhdFiYFZC70hPwRByQmOfc4GUYJWtgJG-NPfbO3ohDsjO3X8SlUb_K7lwXqZ6I99J2jlWg=w1400 1400w,https://lh3.googleusercontent.com/grass-cs/AABkmLenAcFthcm65useGt6W3K88VQhR5Td-sGW3hRjLx8SlOckL8gouNFB3LjjGMRjnq3RhdFiYFZC70hPwRByQmOfc4GUYJWtgJG-NPfbO3ohDsjO3X8SlUb_K7lwXqZ6I99J2jlWg=w2000 2000w"
+      sizes="(min-width:821px) 58vw, 100vw" width="1400" height="1050" fetchpriority="high" alt="The Royal Barbers shopfront on Haydons Road, Wimbledon">
+  </figure>
 </div>
 
-<div class="info"><ul>
-  <li>Walk-ins welcome</li><li>First come, first served</li><li>Free Wi-Fi</li><li>Hair products sold</li>
+<div class="sign"><ul>
+  <li>No appointment needed</li><li>First come, first served</li><li>Free Wi-Fi available</li><li>Hair products sold</li>
 </ul></div>
 
 <section id="about"><div class="wrap about">
-  <div>
+  <div class="copy">
     <h2>The shop</h2>
-    <p>Royal Barbers is a barbershop at 323A Haydons Road in Wimbledon, open seven days a week. We do haircuts, skin fades, beard trims, hot towel shaves and a few extras.</p>
-    <p>There is nothing to book. Come in when it suits you and you will be seen in turn. There is free Wi-Fi while you wait, and we sell hair products.</p>
+    <p>Royal Barbers is on Haydons Road in Wimbledon. Walk-ins are welcome, and customers are seen in order of arrival.</p>
+    <p>We cut hair, do skin fades and beard trims, and offer hot towel shaves and a few extras. The full list is below. There is free Wi-Fi if you are waiting, and we sell hair products.</p>
   </div>
-  <div class="pair">
-    <figure class="shot"><button type="button" data-lb><img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9STelOHNQ6TdI1AbWJdUtM5Oaq6ZWSZbP_5pOfYK5bMc9MldOxQU004VZ3nr5XNT0CsspftK3r6TybcJQEN0A049m1vvcQsBOyM05talk1sviIInqIegc7x62OzJ1LqUbaH4-4E=w1200" alt="Inside the Royal Barbers shop" loading="lazy"></button></figure>
-    <figure class="shot"><button type="button" data-lb><img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9Q_FvANsyvJ2YiD8ZkK7HKtAKsnsNH9sbEnbWO2ZwRo36lcCcQHGTqv3_OjLDwDJPxWSDKpX9E5YyHY8t-VzF3L8Q0ilpt7tgTcVnLRFyaZ10HOeBv4duNFDTvbbxb8a92qciyuPw=w1200" alt="The owner of Royal Barbers" loading="lazy"></button></figure>
-  </div>
+  <figure class="main"><button class="shot" type="button" data-lb><img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9STelOHNQ6TdI1AbWJdUtM5Oaq6ZWSZbP_5pOfYK5bMc9MldOxQU004VZ3nr5XNT0CsspftK3r6TybcJQEN0A049m1vvcQsBOyM05talk1sviIInqIegc7x62OzJ1LqUbaH4-4E=w1200" alt="Inside the Royal Barbers shop" width="1200" height="900" loading="lazy"></button></figure>
+  <figure class="second"><button class="shot" type="button" data-lb><img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9Q_FvANsyvJ2YiD8ZkK7HKtAKsnsNH9sbEnbWO2ZwRo36lcCcQHGTqv3_OjLDwDJPxWSDKpX9E5YyHY8t-VzF3L8Q0ilpt7tgTcVnLRFyaZ10HOeBv4duNFDTvbbxb8a92qciyuPw=w800" alt="The owner of Royal Barbers" width="800" height="1067" loading="lazy"></button></figure>
 </div></section>
 
 <section class="prices" id="prices"><div class="wrap">
   <h2>Price list</h2>
-  <p>Walk-ins welcome. No appointment needed. First come, first served.</p>
-  <div class="price-grid">
+  <p class="pintro">Walk-ins welcome. No appointment needed. First come, first served.</p>
+  <div class="pgrid">
     <ul class="plist">
       <li><span>All Over One Grade</span><span class="p">£13</span></li>
       <li><span>Kids Haircut Under 12</span><span class="p">£16</span></li>
@@ -209,8 +254,8 @@ dialog .pv{left:6px}dialog .nx{right:6px}
       <li><span>Ear Candle</span><span class="p">£10</span></li>
       <li><span>Ear &amp; Nose Wax</span><span class="p">£5</span></li>
     </ul>
-    <figure class="shot board">
-      <button type="button" data-lb><img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9RS8ErmR93iuzaTYvwvfHAJs5D2NCCbycTVENFOvjOhVec-kdU_vGISPzkYS6X27ScG9srIu-TQISY5yml6gw_falGU7YWfP9f8o0tBcZYBDCIeTBPTl5IobnasDpJ6tSieSpdCgFVLmUOF=w1200" alt="The printed price board in the Royal Barbers shop" loading="lazy"></button>
+    <figure class="board">
+      <button class="shot" type="button" data-lb><img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9RS8ErmR93iuzaTYvwvfHAJs5D2NCCbycTVENFOvjOhVec-kdU_vGISPzkYS6X27ScG9srIu-TQISY5yml6gw_falGU7YWfP9f8o0tBcZYBDCIeTBPTl5IobnasDpJ6tSieSpdCgFVLmUOF=w700" alt="The price board in the Royal Barbers shop" width="700" height="933" loading="lazy"></button>
       <figcaption>The price board in the shop. Tap to enlarge.</figcaption>
     </figure>
   </div>
@@ -218,18 +263,18 @@ dialog .pv{left:6px}dialog .nx{right:6px}
 
 <section id="work"><div class="wrap">
   <h2>Our work</h2>
-  <div class="gallery">
-    <button type="button" data-lb><img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9ShyWF3VGDdt7fJ22nHF7uXiFStWTiGAgthmzrVrLVWvGo0vwBcRpCwbV9pkSLOtgHVOm-CZc9HDo9uAVMvbEx-svZtJB8Y27IFbDN4C3WwQ2CcD8Esq-7MV7MpFaHI8YMyEClp=w1200" alt="A finished haircut by Royal Barbers" loading="lazy"></button>
-    <button type="button" data-lb><img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9SrJi02ibyCHzB0u1aMDX0PLCln82-mJzXtstZdNofJUM87z3FtKhg58A3Jp2KSFkWdhre24JY5Wfr4yWxcC3XZApEbNxpdi1mIFUwAv7-14obCwRHEd8FgLFlTE-XBUeJcWZpOkg=s1200" alt="A finished haircut by Royal Barbers, second example" loading="lazy"></button>
-    <button type="button" data-lb><img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9QxfVqg0Dzh3zJ63aRqZnJXP0eOEwpy7uCAnM7Br8J-sEIR2rvvwISEoNSkVdlIoTovyrh-Alje4D-WN9-kp4IBKCraA6oTtajP07qIhPG5Kr_W2go5KRId1cyniDXY0s7qE160lnIWS4AL=s1200" alt="A finished haircut by Royal Barbers, third example" loading="lazy"></button>
-    <button type="button" data-lb><img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9S6goCLkdByVAkwg_w-QrVlvx11bn94fYy2VC-q3-t2Hl1DsGQplL5nrmNtdqsCQpQ5uiW3SsekrxPk6FWe2xWFETsAP6ftNGGjj4MPmuAXhsq76UKSQBFgUPdsl6jZrjQbCNadBi1cuwn4=s1200" alt="A finished haircut by Royal Barbers, fourth example" loading="lazy"></button>
-    <button type="button" data-lb><img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9SdWc7-FVhBivtacUgnzj-B9ONkLnx73ARSJ5ldwhGuT95_WO8rEI1jbRd8sjY7386Ha0ke3OPyPUug5mHdU4DU8O3k4Dx-wnsVyHR8VJq9xIeG7PEiUOIUVGRR1HrQZfgLX25P3lCvVRw=s1200" alt="A finished haircut by Royal Barbers, fifth example" loading="lazy"></button>
-    <button type="button" data-lb><img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9SGQtVl35lsUjazIwhgzuMYsU7X3iRLpzDc24GDY0kQk6JStE70HhQzdIipPoN29dhpkMrcBQ29mdDRUHcuDZJLbUcHirNHEwzg1Dh5YFht5aFKTD2TLlNYbqpFQsNZCRDTz_Qb4m63Fwq7=s1200" alt="A finished haircut by Royal Barbers, sixth example" loading="lazy"></button>
-    <button type="button" data-lb><img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9QUG9OM9aEI6qpP__qTLZKbJDJ8TNkHqk56F_lnEvS721n37m3wTujRI9Jgi-o-tBEUWBalJYmmnnlJv6pkT8g5DUnD3bbgg_6ncqsr1RGexd3Cq8eoM48rjwSfH8Ss_5DQMYOIwjw6RLmv=s1200" alt="A finished haircut by Royal Barbers, seventh example" loading="lazy"></button>
+  <div class="gal">
+    <button type="button" data-lb><img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9ShyWF3VGDdt7fJ22nHF7uXiFStWTiGAgthmzrVrLVWvGo0vwBcRpCwbV9pkSLOtgHVOm-CZc9HDo9uAVMvbEx-svZtJB8Y27IFbDN4C3WwQ2CcD8Esq-7MV7MpFaHI8YMyEClp=w900" alt="Finished haircut, photo 1 of 7" loading="lazy"></button>
+    <button type="button" data-lb><img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9SrJi02ibyCHzB0u1aMDX0PLCln82-mJzXtstZdNofJUM87z3FtKhg58A3Jp2KSFkWdhre24JY5Wfr4yWxcC3XZApEbNxpdi1mIFUwAv7-14obCwRHEd8FgLFlTE-XBUeJcWZpOkg=w900" alt="Finished haircut, photo 2 of 7" loading="lazy"></button>
+    <button type="button" data-lb><img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9QxfVqg0Dzh3zJ63aRqZnJXP0eOEwpy7uCAnM7Br8J-sEIR2rvvwISEoNSkVdlIoTovyrh-Alje4D-WN9-kp4IBKCraA6oTtajP07qIhPG5Kr_W2go5KRId1cyniDXY0s7qE160lnIWS4AL=w900" alt="Finished haircut, photo 3 of 7" loading="lazy"></button>
+    <button type="button" data-lb><img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9S6goCLkdByVAkwg_w-QrVlvx11bn94fYy2VC-q3-t2Hl1DsGQplL5nrmNtdqsCQpQ5uiW3SsekrxPk6FWe2xWFETsAP6ftNGGjj4MPmuAXhsq76UKSQBFgUPdsl6jZrjQbCNadBi1cuwn4=w900" alt="Finished haircut, photo 4 of 7" loading="lazy"></button>
+    <button type="button" data-lb><img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9SdWc7-FVhBivtacUgnzj-B9ONkLnx73ARSJ5ldwhGuT95_WO8rEI1jbRd8sjY7386Ha0ke3OPyPUug5mHdU4DU8O3k4Dx-wnsVyHR8VJq9xIeG7PEiUOIUVGRR1HrQZfgLX25P3lCvVRw=w900" alt="Finished haircut, photo 5 of 7" loading="lazy"></button>
+    <button type="button" data-lb><img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9SGQtVl35lsUjazIwhgzuMYsU7X3iRLpzDc24GDY0kQk6JStE70HhQzdIipPoN29dhpkMrcBQ29mdDRUHcuDZJLbUcHirNHEwzg1Dh5YFht5aFKTD2TLlNYbqpFQsNZCRDTz_Qb4m63Fwq7=w900" alt="Finished haircut, photo 6 of 7" loading="lazy"></button>
+    <button type="button" data-lb><img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9QUG9OM9aEI6qpP__qTLZKbJDJ8TNkHqk56F_lnEvS721n37m3wTujRI9Jgi-o-tBEUWBalJYmmnnlJv6pkT8g5DUnD3bbgg_6ncqsr1RGexd3Cq8eoM48rjwSfH8Ss_5DQMYOIwjw6RLmv=w900" alt="Finished haircut, photo 7 of 7" loading="lazy"></button>
   </div>
 </div></section>
 
-<section class="visit on-dark" id="visit"><div class="wrap">
+<section class="visit" id="visit"><div class="wrap">
   <h2>Find us</h2>
   <div class="vgrid">
     <div>
@@ -237,9 +282,9 @@ dialog .pv{left:6px}dialog .nx{right:6px}
       <address>Royal Barbers<br>323A Haydons Road<br>Wimbledon, London SW19 8LA</address>
       <h3>Telephone</h3>
       <a class="tel" href="tel:07828983835">07828 983835</a><br>
-      <a class="btn y" href="https://www.google.com/maps/search/?api=1&amp;query=Royal+Barbers+323A+Haydons+Road+Wimbledon+SW19+8LA" target="_blank" rel="noopener">Open in Google Maps</a>
-      <div class="walk"><p><strong>Walk-ins welcome.</strong> No appointment needed. First come, first served.</p></div>
-      <ul class="extra"><li>Free Wi-Fi available</li><li>Hair products sold</li></ul>
+      <a class="maplink" href="https://www.google.com/maps/search/Royal+Barbers/@51.4265365,-0.1902247,19z" target="_blank" rel="noopener">View on Google Maps<span class="sr" style="position:absolute;left:-9999px"> (opens in a new tab)</span> &rarr;</a>
+      <div class="walk"><strong>Walk-ins welcome</strong><p>No appointment needed. Customers are seen in order of arrival.</p></div>
+      <ul class="fac"><li>Free Wi-Fi available</li><li>Hair products sold</li></ul>
     </div>
     <div>
       <h3>Opening hours</h3>
@@ -258,43 +303,57 @@ dialog .pv{left:6px}dialog .nx{right:6px}
 </main>
 
 <footer><div class="wrap">
-  <span><span class="pole" aria-hidden="true"></span><strong>Royal Barbers</strong></span>
+  <strong>Royal Barbers</strong>
   <span>323A Haydons Road, Wimbledon, London SW19 8LA</span>
   <a href="tel:07828983835">07828 983835</a>
 </div></footer>
 
 <dialog id="lb" aria-label="Photo viewer">
-  <div class="stage"><img id="lbi" alt=""></div>
-  <button class="x" id="lbx" type="button">Close</button>
-  <button class="nv pv" id="lbp" type="button" aria-label="Previous photo">&#8249;</button>
-  <button class="nv nx" id="lbn" type="button" aria-label="Next photo">&#8250;</button>
+  <div class="stage"><img id="lbi" alt=""><p id="lbc" aria-live="polite"></p></div>
+  <button class="lb lbx" id="lbx" type="button">Close</button>
+  <button class="lb lbp" id="lbp" type="button" aria-label="Previous photo">&#8249;</button>
+  <button class="lb lbn" id="lbn" type="button" aria-label="Next photo">&#8250;</button>
 </dialog>
 
 <script>
 (function(){
   var $=function(i){return document.getElementById(i)};
-  var r=document.querySelector('#hours tr[data-day="'+new Date().getDay()+'"]'); if(r)r.classList.add("today");
+  var today=document.querySelector('#hours tr[data-day="'+new Date().getDay()+'"]');
+  if(today)today.classList.add("today");
 
+  /* mobile menu */
   var nav=$("nav"),mb=$("mb");
-  function setMenu(o){nav.classList.toggle("open",o);mb.setAttribute("aria-expanded",o);mb.setAttribute("aria-label",o?"Close menu":"Open menu");mb.textContent=o?"Close":"Menu"}
-  mb.addEventListener("click",function(){setMenu(!nav.classList.contains("open"))});
-  nav.addEventListener("click",function(e){if(e.target.tagName==="A")setMenu(false)});
-  document.addEventListener("keydown",function(e){if(e.key==="Escape")setMenu(false)});
+  function menu(o){nav.classList.toggle("open",o);mb.setAttribute("aria-expanded",o);mb.textContent=o?"Close":"Menu"}
+  mb.addEventListener("click",function(){menu(!nav.classList.contains("open"))});
+  nav.addEventListener("click",function(e){if(e.target.closest("a"))menu(false)});
+  document.addEventListener("keydown",function(e){if(e.key==="Escape"&&nav.classList.contains("open")){menu(false);mb.focus()}});
+  document.addEventListener("click",function(e){if(nav.classList.contains("open")&&!e.target.closest(".bar"))menu(false)});
 
-  var links=[].slice.call(nav.querySelectorAll("a"));
+  /* current section in nav */
+  var links=[].slice.call(nav.querySelectorAll("ul a"));
   if("IntersectionObserver" in window){
-    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.removeAttribute("aria-current");if(a.getAttribute("href")==="#"+e.target.id)a.setAttribute("aria-current","true")})}})},{rootMargin:"-40% 0px -55% 0px"});
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)links.forEach(function(a){a.toggleAttribute("aria-current",false);if(a.getAttribute("href")==="#"+e.target.id)a.setAttribute("aria-current","true")})})},{rootMargin:"-45% 0px -50% 0px"});
     links.forEach(function(a){var s=document.querySelector(a.getAttribute("href"));if(s)io.observe(s)});
   }
 
-  var lb=$("lb"),lbi=$("lbi"),imgs=[].slice.call(document.querySelectorAll("[data-lb] img")),cur=0;
-  function show(i){cur=(i+imgs.length)%imgs.length;lbi.src=imgs[cur].src;lbi.alt=imgs[cur].alt}
-  imgs.forEach(function(im,i){im.parentNode.addEventListener("click",function(){show(i);lb.showModal()})});
+  /* gallery: let each photo keep its own proportions */
+  [].forEach.call(document.querySelectorAll(".gal img"),function(im){
+    function s(){if(im.naturalWidth)im.parentNode.style.setProperty("--r",(im.naturalWidth/im.naturalHeight).toFixed(4))}
+    im.complete?s():im.addEventListener("load",s);
+  });
+
+  /* lightbox */
+  var lb=$("lb"),lbi=$("lbi"),lbc=$("lbc"),imgs=[].slice.call(document.querySelectorAll("[data-lb] img")),cur=0,x0=null;
+  function big(u){return u.replace(/=[ws]\d+$/,"=w1800")}
+  function show(i){cur=(i+imgs.length)%imgs.length;lbi.src=big(imgs[cur].currentSrc||imgs[cur].src);lbi.alt=imgs[cur].alt;lbc.textContent=(cur+1)+" of "+imgs.length}
+  imgs.forEach(function(im,i){im.parentNode.addEventListener("click",function(){show(i);lb.showModal();$("lbx").focus()})});
   $("lbx").onclick=function(){lb.close()};
   $("lbp").onclick=function(){show(cur-1)};
   $("lbn").onclick=function(){show(cur+1)};
   lb.addEventListener("click",function(e){if(e.target===lb||e.target.className==="stage")lb.close()});
   lb.addEventListener("keydown",function(e){if(e.key==="ArrowLeft")show(cur-1);if(e.key==="ArrowRight")show(cur+1)});
+  lb.addEventListener("touchstart",function(e){x0=e.touches[0].clientX},{passive:true});
+  lb.addEventListener("touchend",function(e){if(x0===null)return;var d=e.changedTouches[0].clientX-x0;if(Math.abs(d)>50)show(cur+(d<0?1:-1));x0=null});
 })();
 </script>
 </body>
