@@ -4,193 +4,147 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Royal Barbers | Barbershop in Wimbledon, Haydons Road</title>
-<meta name="description" content="Royal Barbers, 323A Haydons Road, Wimbledon SW19 8LA. Haircuts, skin fades, beard trims and hot towel shaves. No appointment needed. Open 7 days.">
+<meta name="description" content="Royal Barbers, 323A Haydons Road, Wimbledon SW19 8LA. Haircuts, skin fades, beard trims and hot towel shaves. Walk in or book a slot. Open 7 days.">
 <style>
-  :root {
-    --black: #070707;
-    --coal: #101010;
-    --panel: #161412;
-    --gold: #c9a14a;
-    --gold-bright: #e6c36a;
-    --gold-deep: #8a6b25;
-    --ivory: #efe8d6;
-    --muted: #a99d82;
-    --display: "Didot", "Bodoni MT", "Playfair Display", Georgia, serif;
-    --body: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  }
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; scroll-padding-top: 76px; }
-  body {
-    margin: 0;
-    background: var(--black);
-    color: var(--ivory);
-    font-family: var(--body);
-    line-height: 1.6;
-    font-size: 1.05rem;
-  }
-  img { display: block; max-width: 100%; }
-  a { color: var(--gold-bright); }
-  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 22px; }
+:root{
+  --black:#0a0908; --panel:#13110e; --line:#2b251b;
+  --gold:#c9a14a; --gold-hi:#e3c06a; --gold-lo:#8a6b25;
+  --ivory:#efe8d6; --muted:#a39878;
+  --display:"Didot","Bodoni MT","Playfair Display",Georgia,serif;
+  --body:"Gill Sans","Gill Sans MT",Calibri,"Trebuchet MS",sans-serif;
+  --gutter:clamp(20px,5vw,56px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--black);color:var(--ivory);font:1.05rem/1.65 var(--body)}
+img{display:block;max-width:100%}
+a{color:var(--gold-hi)}
+.wrap{max-width:1160px;margin:0 auto;padding:0 var(--gutter)}
+h1,h2,h3{font-family:var(--display);margin:0;line-height:1.08;font-weight:700}
+h2{font-size:clamp(2rem,4.4vw,3.1rem);color:var(--gold-hi);letter-spacing:-.01em}
+h3{font-size:1.35rem;color:var(--gold-hi)}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--gold-hi);outline-offset:3px}
 
-  h1, h2, h3 { font-family: var(--display); font-weight: 700; margin: 0; line-height: 1.1; }
-  h2 {
-    font-size: clamp(2rem, 4.5vw, 3rem);
-    background: linear-gradient(180deg, var(--gold-bright), var(--gold) 60%, var(--gold-deep));
-    -webkit-background-clip: text; background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
+/* barber pole strip */
+.pole{height:10px;background:repeating-linear-gradient(-45deg,var(--gold) 0 14px,var(--black) 14px 28px,var(--ivory) 28px 42px,var(--black) 42px 56px);background-size:79.2px 79.2px;animation:spin 2.6s linear infinite}
+@keyframes spin{to{background-position:79.2px 0}}
 
-  /* Barber pole strip: the one moving element */
-  .pole {
-    height: 12px;
-    background: repeating-linear-gradient(-45deg,
-      var(--gold) 0 14px, var(--black) 14px 28px, var(--ivory) 28px 42px, var(--black) 42px 56px);
-    background-size: 79.2px 79.2px;
-    animation: spin 2.4s linear infinite;
-  }
-  @keyframes spin { to { background-position: 79.2px 0; } }
+nav{position:sticky;top:0;z-index:30;background:rgba(10,9,8,.95);backdrop-filter:blur(6px);border-bottom:1px solid var(--gold-lo)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;height:64px}
+.brand{font:700 1.4rem var(--display);color:var(--gold-hi);text-decoration:none;white-space:nowrap}
+nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0}
+nav ul a{color:var(--ivory);text-decoration:none;font-size:.97rem;padding:6px 0;border-bottom:2px solid transparent}
+nav ul a:hover{border-color:var(--gold)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 26px;border:1px solid var(--gold);border-radius:2px;background:transparent;color:var(--gold-hi);font:700 1rem var(--body);text-decoration:none;cursor:pointer;transition:background .2s,color .2s}
+.btn:hover{background:var(--gold);color:var(--black)}
+.btn.solid{background:var(--gold);color:var(--black)}
+.btn.solid:hover{background:var(--gold-hi)}
+nav .btn{padding:9px 20px}
+@media(max-width:780px){nav ul{display:none}}
 
-  /* Nav */
-  nav {
-    position: sticky; top: 0; z-index: 20;
-    background: rgba(7,7,7,.94);
-    backdrop-filter: blur(6px);
-    border-bottom: 1px solid var(--gold-deep);
-  }
-  nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 64px; }
-  .brand {
-    font-family: var(--display); font-size: 1.35rem; font-weight: 700;
-    color: var(--gold-bright); text-decoration: none;
-  }
-  nav ul { display: flex; gap: 24px; list-style: none; margin: 0; padding: 0; }
-  nav ul a { color: var(--ivory); text-decoration: none; font-size: .98rem; padding: 6px 0; border-bottom: 2px solid transparent; }
-  nav ul a:hover { border-color: var(--gold); }
-  .call-btn {
-    background: var(--gold); color: var(--black); text-decoration: none; font-weight: 700;
-    padding: 9px 18px; border-radius: 2px; white-space: nowrap;
-  }
-  .call-btn:hover { background: var(--gold-bright); }
-  @media (max-width: 760px) { nav ul { display: none; } }
+/* hero */
+.hero{position:relative;min-height:min(88vh,800px);display:flex;align-items:flex-end;overflow:hidden;background:#000}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%;opacity:.55}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,9,8,.3),rgba(10,9,8,.5) 50%,var(--black))}
+.hero .wrap{position:relative;z-index:1;width:100%;padding-top:140px;padding-bottom:72px}
+.hero h1{font-size:clamp(3.2rem,11vw,7rem);color:var(--gold-hi);letter-spacing:-.02em}
+.hero p{max-width:34ch;margin:16px 0 30px;font-size:clamp(1.1rem,2.3vw,1.4rem)}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
 
-  a:focus-visible, button:focus-visible { outline: 3px solid var(--gold-bright); outline-offset: 3px; }
+.strip{background:var(--panel);border-block:1px solid var(--gold-lo)}
+.strip ul{list-style:none;margin:0 auto;padding:0;max-width:1160px;display:grid;grid-template-columns:repeat(4,1fr)}
+.strip li{padding:20px 12px;text-align:center;font:1.08rem var(--display);color:var(--gold-hi)}
+.strip li+li{border-left:1px solid var(--gold-lo)}
+@media(max-width:780px){.strip ul{grid-template-columns:1fr 1fr}.strip li:nth-child(3){border-left:0}.strip li:nth-child(n+3){border-top:1px solid var(--gold-lo)}}
 
-  /* Hero */
-  .hero {
-    position: relative;
-    min-height: min(86vh, 780px);
-    display: flex; align-items: flex-end;
-    background: #000;
-    overflow: hidden;
-  }
-  .hero > img {
-    position: absolute; inset: 0; width: 100%; height: 100%;
-    object-fit: cover; object-position: center 40%;
-    opacity: .62;
-  }
-  .hero::after {
-    content: ""; position: absolute; inset: 0;
-    background: linear-gradient(180deg, rgba(7,7,7,.35) 0%, rgba(7,7,7,.55) 45%, var(--black) 100%);
-  }
-  .hero .wrap { position: relative; z-index: 1; padding-bottom: 64px; padding-top: 120px; }
-  .hero h1 {
-    font-size: clamp(3rem, 10vw, 6.5rem);
-    background: linear-gradient(180deg, var(--gold-bright), var(--gold) 55%, var(--gold-deep));
-    -webkit-background-clip: text; background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  .hero p.lead { font-size: clamp(1.1rem, 2.4vw, 1.4rem); max-width: 36ch; margin: 14px 0 28px; color: var(--ivory); }
-  .btns { display: flex; flex-wrap: wrap; gap: 12px; }
-  .btn {
-    display: inline-block; padding: 13px 26px; border-radius: 2px; font-weight: 700; text-decoration: none;
-    border: 1px solid var(--gold);
-  }
-  .btn.solid { background: var(--gold); color: var(--black); }
-  .btn.solid:hover { background: var(--gold-bright); }
-  .btn.ghost { color: var(--gold-bright); background: rgba(0,0,0,.4); }
-  .btn.ghost:hover { background: var(--gold); color: var(--black); }
+section{padding:96px 0}
+.head{margin-bottom:48px}
+.head p{color:var(--muted);margin:10px 0 0;max-width:52ch}
 
-  /* Info strip */
-  .strip { background: var(--panel); border-top: 1px solid var(--gold-deep); border-bottom: 1px solid var(--gold-deep); }
-  .strip ul {
-    list-style: none; margin: 0; padding: 0;
-    display: grid; grid-template-columns: repeat(4, 1fr);
-  }
-  .strip li { padding: 20px 14px; text-align: center; font-family: var(--display); font-size: 1.1rem; color: var(--gold-bright); }
-  .strip li + li { border-left: 1px solid var(--gold-deep); }
-  @media (max-width: 760px) {
-    .strip ul { grid-template-columns: 1fr 1fr; }
-    .strip li:nth-child(3) { border-left: 0; }
-    .strip li:nth-child(n+3) { border-top: 1px solid var(--gold-deep); }
-  }
+/* about */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.about h2{margin-bottom:22px}
+.about p{max-width:50ch;margin:0 0 1em}
+.about-photos{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.about-photos img{width:100%;aspect-ratio:3/4;object-fit:cover;border:1px solid var(--gold-lo)}
+.about-photos figure{margin:0}
+.about-photos figure:nth-child(2){margin-top:36px}
+@media(max-width:860px){.about{grid-template-columns:1fr;gap:40px}}
 
-  section { padding: 84px 0; }
+/* prices */
+.prices{background:var(--panel);border-block:1px solid var(--gold-lo)}
+.price-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:start}
+.group+.group{margin-top:38px}
+.group h3{padding-bottom:10px;border-bottom:1px solid var(--gold-lo);margin-bottom:6px}
+.group ul{list-style:none;margin:0;padding:0}
+.group li{display:flex;align-items:baseline;gap:12px;padding:10px 0}
+.dots{flex:1;border-bottom:1px dotted var(--gold-lo);transform:translateY(-4px);min-width:14px}
+.price{font:700 1.3rem var(--display);color:var(--gold-hi)}
+.menu-photo{margin:0;position:sticky;top:92px;border:1px solid var(--gold-lo);padding:8px;background:var(--black)}
+.menu-photo img{width:100%;height:auto}
+@media(max-width:900px){.price-grid{grid-template-columns:1fr;gap:40px}.menu-photo{position:static;order:-1}}
 
-  /* About */
-  .about { display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; align-items: center; }
-  .about p { color: var(--ivory); max-width: 52ch; }
-  .about h2 { margin-bottom: 20px; }
-  .frame { border: 1px solid var(--gold-deep); padding: 8px; background: var(--coal); }
-  .frame img { width: 100%; height: 100%; object-fit: cover; }
-  .frame figcaption { padding: 10px 4px 2px; font-family: var(--display); color: var(--gold-bright); }
-  figure { margin: 0; }
-  .about-photos { display: grid; gap: 16px; }
-  .about-photos .interior img { aspect-ratio: 4 / 3; }
-  @media (max-width: 860px) { .about { grid-template-columns: 1fr; } }
+/* collage */
+.collage{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:clamp(110px,15vw,190px);gap:10px}
+.collage img{width:100%;height:100%;object-fit:cover;border:1px solid var(--line);filter:saturate(.95);transition:filter .3s,border-color .3s}
+.collage img:hover{filter:saturate(1.1);border-color:var(--gold)}
+.collage .a{grid-column:span 3;grid-row:span 2}
+.collage .b{grid-column:span 3;grid-row:span 1}
+.collage .c{grid-column:span 2;grid-row:span 2}
+.collage .d{grid-column:span 1;grid-row:span 1}
+.collage .e{grid-column:span 2;grid-row:span 2}
+.collage .f{grid-column:span 2;grid-row:span 1}
+@media(max-width:700px){
+  .collage{grid-template-columns:repeat(2,1fr);grid-auto-rows:44vw}
+  .collage .a,.collage .b,.collage .c,.collage .d,.collage .e,.collage .f{grid-column:span 1;grid-row:span 1}
+  .collage .a{grid-column:span 2;grid-row:span 2}
+}
 
-  /* Prices */
-  .prices { background: var(--panel); border-top: 1px solid var(--gold-deep); border-bottom: 1px solid var(--gold-deep); }
-  .prices .head { text-align: center; margin-bottom: 44px; }
-  .prices .head p { color: var(--muted); margin: 10px 0 0; }
-  .price-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
-  .group + .group { margin-top: 36px; }
-  .group h3 { font-size: 1.5rem; color: var(--gold-bright); margin-bottom: 8px; padding-bottom: 8px; border-bottom: 1px solid var(--gold-deep); }
-  .group ul { list-style: none; margin: 0; padding: 0; }
-  .group li { display: flex; align-items: baseline; gap: 10px; padding: 9px 0; }
-  .group li .name { flex: 0 1 auto; }
-  .group li .dots { flex: 1 1 auto; border-bottom: 1px dotted var(--gold-deep); transform: translateY(-4px); min-width: 16px; }
-  .group li .price { font-family: var(--display); font-size: 1.3rem; font-weight: 700; color: var(--gold-bright); }
-  .menu-photo { position: sticky; top: 90px; }
-  .menu-photo img { width: 100%; height: auto; }
-  .note { margin-top: 28px; color: var(--muted); font-size: .95rem; }
-  @media (max-width: 860px) {
-    .price-grid { grid-template-columns: 1fr; gap: 36px; }
-    .menu-photo { position: static; order: -1; }
-  }
+/* booking */
+.book{background:var(--panel);border-block:1px solid var(--gold-lo)}
+.book-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:64px;align-items:start}
+.book-side p{color:var(--muted);max-width:36ch}
+.book-side .walk{margin-top:28px;padding-left:16px;border-left:2px solid var(--gold);color:var(--ivory)}
+form{display:grid;gap:22px}
+fieldset{border:0;margin:0;padding:0;min-width:0}
+legend,label.l{display:block;font-size:.95rem;color:var(--muted);margin-bottom:8px;padding:0}
+select,input[type=text],input[type=tel],input[type=date]{width:100%;background:var(--black);color:var(--ivory);border:1px solid var(--gold-lo);border-radius:2px;padding:13px 14px;font:1rem var(--body);color-scheme:dark}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.slots{display:grid;grid-template-columns:repeat(auto-fill,minmax(82px,1fr));gap:8px}
+.slots input{position:absolute;opacity:0;pointer-events:none}
+.slots label{display:block;text-align:center;padding:10px 0;border:1px solid var(--gold-lo);border-radius:2px;cursor:pointer;font-size:.97rem;transition:background .15s}
+.slots label:hover{background:#221d13}
+.slots input:checked+label{background:var(--gold);color:var(--black);border-color:var(--gold);font-weight:700}
+.slots input:disabled+label{opacity:.28;cursor:not-allowed;text-decoration:line-through}
+.slots input:focus-visible+label{outline:3px solid var(--gold-hi);outline-offset:2px}
+.empty{color:var(--muted);margin:0}
+.summary{padding:16px 18px;border:1px solid var(--gold-lo);background:var(--black);min-height:58px}
+.summary b{color:var(--gold-hi);font-weight:700}
+.send{display:flex;flex-wrap:wrap;gap:12px}
+.send .btn[disabled]{opacity:.4;pointer-events:none}
+.fine{font-size:.9rem;color:var(--muted);margin:0}
+@media(max-width:900px){.book-grid{grid-template-columns:1fr;gap:40px}.row{grid-template-columns:1fr}}
 
-  /* Work */
-  .work { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
-  .work h2 { margin-bottom: 18px; }
-  .work p { max-width: 46ch; }
-  .work .frame img { aspect-ratio: 4 / 5; }
-  @media (max-width: 860px) { .work { grid-template-columns: 1fr; } .work .frame { order: -1; } }
+/* visit */
+.visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px}
+.visit h2{margin-bottom:40px}
+.visit h3{margin-bottom:10px}
+.visit address{font-style:normal;margin-bottom:26px}
+.tel{font:700 1.9rem var(--display);text-decoration:none;display:inline-block;margin-bottom:26px}
+table{width:100%;border-collapse:collapse}
+th,td{padding:12px 0;border-bottom:1px solid var(--line);font-weight:400;text-align:left}
+td{text-align:right}
+tr.today th,tr.today td{color:var(--gold-hi);font-weight:700}
+tr.today th::after{content:" (today)";font-weight:400;color:var(--muted)}
+.extras{margin:26px 0 0;padding:0;list-style:none;color:var(--muted)}
+@media(max-width:860px){.visit-grid{grid-template-columns:1fr;gap:40px}}
 
-  /* Visit */
-  .visit { background: var(--panel); border-top: 1px solid var(--gold-deep); }
-  .visit h2 { margin-bottom: 36px; }
-  .visit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; }
-  .visit h3 { font-size: 1.5rem; color: var(--gold-bright); margin-bottom: 10px; }
-  .visit address { font-style: normal; margin-bottom: 22px; }
-  .visit .tel { font-family: var(--display); font-size: 1.8rem; font-weight: 700; text-decoration: none; display: inline-block; margin-bottom: 22px; }
-  table.hours { width: 100%; border-collapse: collapse; }
-  .hours th, .hours td { text-align: left; padding: 11px 0; border-bottom: 1px solid #2a241a; font-weight: 400; }
-  .hours td { text-align: right; }
-  .hours tr.today th, .hours tr.today td { color: var(--gold-bright); font-weight: 700; }
-  .hours tr.today th::after { content: " (today)"; font-weight: 400; color: var(--muted); }
-  .extras { margin-top: 26px; padding: 0; list-style: none; color: var(--muted); }
-  .extras li { padding: 3px 0; }
-  @media (max-width: 860px) { .visit-grid { grid-template-columns: 1fr; gap: 36px; } }
-
-  footer { background: var(--black); border-top: 1px solid var(--gold-deep); padding: 28px 0 36px; text-align: center; color: var(--muted); font-size: .95rem; }
-  footer strong { font-family: var(--display); color: var(--gold-bright); font-size: 1.15rem; }
-
-  @media (prefers-reduced-motion: reduce) {
-    .pole { animation: none; }
-    html { scroll-behavior: auto; }
-  }
+footer{border-top:1px solid var(--gold-lo);padding:30px 0 38px;text-align:center;color:var(--muted);font-size:.95rem}
+footer strong{font:700 1.15rem var(--display);color:var(--gold-hi)}
+@media(prefers-reduced-motion:reduce){.pole{animation:none}html{scroll-behavior:auto}*{transition:none!important}}
 </style>
 </head>
 <body>
-
 <div class="pole" aria-hidden="true"></div>
 
 <nav>
@@ -200,9 +154,10 @@
       <li><a href="#about">About</a></li>
       <li><a href="#prices">Prices</a></li>
       <li><a href="#work">Our work</a></li>
+      <li><a href="#book">Book</a></li>
       <li><a href="#visit">Find us</a></li>
     </ul>
-    <a class="call-btn" href="tel:07828983835">Call 07828 983835</a>
+    <a class="btn solid" href="#book">Book a slot</a>
   </div>
 </nav>
 
@@ -210,103 +165,113 @@
   <img src="https://lh3.googleusercontent.com/grass-cs/AABkmLenAcFthcm65useGt6W3K88VQhR5Td-sGW3hRjLx8SlOckL8gouNFB3LjjGMRjnq3RhdFiYFZC70hPwRByQmOfc4GUYJWtgJG-NPfbO3ohDsjO3X8SlUb_K7lwXqZ6I99J2jlWg=w1600" alt="Royal Barbers shopfront on Haydons Road, Wimbledon">
   <div class="wrap">
     <h1>Royal Barbers</h1>
-    <p class="lead">Haircuts, skin fades, beard trims and hot towel shaves on Haydons Road, Wimbledon.</p>
+    <p>Haircuts, skin fades, beard trims and hot towel shaves on Haydons Road, Wimbledon.</p>
     <div class="btns">
-      <a class="btn solid" href="#prices">See prices</a>
-      <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=Royal+Barbers+323A+Haydons+Road+Wimbledon+SW19+8LA" target="_blank" rel="noopener">Get directions</a>
+      <a class="btn solid" href="#book">Book a slot</a>
+      <a class="btn" href="#prices">See prices</a>
     </div>
   </div>
 </header>
 
 <div class="strip">
-  <div class="wrap">
-    <ul>
-      <li>No appointment needed</li>
-      <li>First come, first served</li>
-      <li>Free Wi-Fi</li>
-      <li>Hair products sold</li>
-    </ul>
-  </div>
+  <ul>
+    <li>Walk-ins welcome</li>
+    <li>Open 7 days</li>
+    <li>Free Wi-Fi</li>
+    <li>Hair products sold</li>
+  </ul>
 </div>
 
 <section id="about">
   <div class="wrap about">
     <div>
       <h2>Walk in, sit down, walk out sharp</h2>
-      <p>Royal Barbers is a barbershop at 323A Haydons Road in Wimbledon. There is nothing to book: come in when you like and you will be seen in turn.</p>
-      <p>Whether you need a quick all over one grade, a skin fade, or a full cut with a beard trim and shape up, the full price list is below. We also sell hair products, and the Wi-Fi is free while you wait.</p>
+      <p>Royal Barbers is a barbershop at 323A Haydons Road in Wimbledon. Come in when you like and you will be seen in turn, or book a slot and skip the wait.</p>
+      <p>From a quick all over one grade to a skin fade with a full beard trim and shape up, the price list is below. We also sell hair products, and the Wi-Fi is free while you wait.</p>
     </div>
     <div class="about-photos">
-      <figure class="frame interior">
-        <img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9STelOHNQ6TdI1AbWJdUtM5Oaq6ZWSZbP_5pOfYK5bMc9MldOxQU004VZ3nr5XNT0CsspftK3r6TybcJQEN0A049m1vvcQsBOyM05talk1sviIInqIegc7x62OzJ1LqUbaH4-4E=w1200" alt="Inside Royal Barbers" loading="lazy">
-        <figcaption>Inside the shop</figcaption>
-      </figure>
-      <figure class="frame owner">
-        <img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9Q_FvANsyvJ2YiD8ZkK7HKtAKsnsNH9sbEnbWO2ZwRo36lcCcQHGTqv3_OjLDwDJPxWSDKpX9E5YyHY8t-VzF3L8Q0ilpt7tgTcVnLRFyaZ10HOeBv4duNFDTvbbxb8a92qciyuPw=w1200" alt="The owner of Royal Barbers" loading="lazy">
-        <figcaption>The owner</figcaption>
-      </figure>
+      <figure><img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9STelOHNQ6TdI1AbWJdUtM5Oaq6ZWSZbP_5pOfYK5bMc9MldOxQU004VZ3nr5XNT0CsspftK3r6TybcJQEN0A049m1vvcQsBOyM05talk1sviIInqIegc7x62OzJ1LqUbaH4-4E=w1200" alt="Inside Royal Barbers" loading="lazy"></figure>
+      <figure><img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9Q_FvANsyvJ2YiD8ZkK7HKtAKsnsNH9sbEnbWO2ZwRo36lcCcQHGTqv3_OjLDwDJPxWSDKpX9E5YyHY8t-VzF3L8Q0ilpt7tgTcVnLRFyaZ10HOeBv4duNFDTvbbxb8a92qciyuPw=w1200" alt="The owner of Royal Barbers" loading="lazy"></figure>
     </div>
   </div>
 </section>
 
 <section class="prices" id="prices">
   <div class="wrap">
-    <div class="head">
-      <h2>Price list</h2>
-      <p>No appointment needed. First come, first served.</p>
-    </div>
+    <div class="head"><h2>Price list</h2><p>Walk-ins welcome, first come first served. Or book a slot below.</p></div>
     <div class="price-grid">
       <div>
-        <div class="group">
-          <h3>Haircuts</h3>
-          <ul>
-            <li><span class="name">All Over One Grade</span><span class="dots"></span><span class="price">£13</span></li>
-            <li><span class="name">Kids Haircut Under 12</span><span class="dots"></span><span class="price">£16</span></li>
-            <li><span class="name">O.A.P.</span><span class="dots"></span><span class="price">£16</span></li>
-            <li><span class="name">Normal Haircut</span><span class="dots"></span><span class="price">£18</span></li>
-            <li><span class="name">Skin Fade</span><span class="dots"></span><span class="price">£20</span></li>
-            <li><span class="name">Haircut &amp; Wash</span><span class="dots"></span><span class="price">£23</span></li>
-          </ul>
-        </div>
-        <div class="group">
-          <h3>Cut &amp; beard</h3>
-          <ul>
-            <li><span class="name">All Over, Beard Trim &amp; Shape Up</span><span class="dots"></span><span class="price">£23</span></li>
-            <li><span class="name">Haircut, Beard Trim &amp; Shape Up</span><span class="dots"></span><span class="price">£27</span></li>
-            <li><span class="name">Skin Fade, Beard Trim &amp; Shape Up</span><span class="dots"></span><span class="price">£29</span></li>
-          </ul>
-        </div>
-        <div class="group">
-          <h3>Beard &amp; extras</h3>
-          <ul>
-            <li><span class="name">Beard Trim &amp; Shape Up</span><span class="dots"></span><span class="price">£11</span></li>
-            <li><span class="name">Hot Towel &amp; Shave</span><span class="dots"></span><span class="price">£19</span></li>
-            <li><span class="name">Ear Candle</span><span class="dots"></span><span class="price">£10</span></li>
-            <li><span class="name">Ear &amp; Nose Wax</span><span class="dots"></span><span class="price">£5</span></li>
-          </ul>
-        </div>
+        <div class="group"><h3>Haircuts</h3><ul>
+          <li><span>All Over One Grade</span><span class="dots"></span><span class="price">£13</span></li>
+          <li><span>Kids Haircut Under 12</span><span class="dots"></span><span class="price">£16</span></li>
+          <li><span>O.A.P.</span><span class="dots"></span><span class="price">£16</span></li>
+          <li><span>Normal Haircut</span><span class="dots"></span><span class="price">£18</span></li>
+          <li><span>Skin Fade</span><span class="dots"></span><span class="price">£20</span></li>
+          <li><span>Haircut &amp; Wash</span><span class="dots"></span><span class="price">£23</span></li>
+        </ul></div>
+        <div class="group"><h3>Cut &amp; beard</h3><ul>
+          <li><span>All Over, Beard Trim &amp; Shape Up</span><span class="dots"></span><span class="price">£23</span></li>
+          <li><span>Haircut, Beard Trim &amp; Shape Up</span><span class="dots"></span><span class="price">£27</span></li>
+          <li><span>Skin Fade, Beard Trim &amp; Shape Up</span><span class="dots"></span><span class="price">£29</span></li>
+        </ul></div>
+        <div class="group"><h3>Beard &amp; extras</h3><ul>
+          <li><span>Beard Trim &amp; Shape Up</span><span class="dots"></span><span class="price">£11</span></li>
+          <li><span>Hot Towel &amp; Shave</span><span class="dots"></span><span class="price">£19</span></li>
+          <li><span>Ear Candle</span><span class="dots"></span><span class="price">£10</span></li>
+          <li><span>Ear &amp; Nose Wax</span><span class="dots"></span><span class="price">£5</span></li>
+        </ul></div>
       </div>
-      <figure class="frame menu-photo">
-        <img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9RS8ErmR93iuzaTYvwvfHAJs5D2NCCbycTVENFOvjOhVec-kdU_vGISPzkYS6X27ScG9srIu-TQISY5yml6gw_falGU7YWfP9f8o0tBcZYBDCIeTBPTl5IobnasDpJ6tSieSpdCgFVLmUOF=w1200" alt="The Royal Barbers menu board" loading="lazy">
-        <figcaption>The menu in the shop</figcaption>
-      </figure>
+      <figure class="menu-photo"><img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9RS8ErmR93iuzaTYvwvfHAJs5D2NCCbycTVENFOvjOhVec-kdU_vGISPzkYS6X27ScG9srIu-TQISY5yml6gw_falGU7YWfP9f8o0tBcZYBDCIeTBPTl5IobnasDpJ6tSieSpdCgFVLmUOF=w1200" alt="The Royal Barbers menu board" loading="lazy"></figure>
     </div>
   </div>
 </section>
 
 <section id="work">
-  <div class="wrap work">
-    <div>
-      <h2>The finished result</h2>
-      <p>A freshly finished cut on one of our clients. Pick a service from the price list and come in whenever suits you.</p>
-      <div class="btns" style="margin-top:24px">
-        <a class="btn solid" href="tel:07828983835">Call 07828 983835</a>
-      </div>
+  <div class="wrap">
+    <div class="head"><h2>The work</h2></div>
+    <div class="collage">
+      <img class="a" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9ShyWF3VGDdt7fJ22nHF7uXiFStWTiGAgthmzrVrLVWvGo0vwBcRpCwbV9pkSLOtgHVOm-CZc9HDo9uAVMvbEx-svZtJB8Y27IFbDN4C3WwQ2CcD8Esq-7MV7MpFaHI8YMyEClp=w1200" alt="Finished haircut" loading="lazy">
+      <img class="b" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9SrJi02ibyCHzB0u1aMDX0PLCln82-mJzXtstZdNofJUM87z3FtKhg58A3Jp2KSFkWdhre24JY5Wfr4yWxcC3XZApEbNxpdi1mIFUwAv7-14obCwRHEd8FgLFlTE-XBUeJcWZpOkg=s1000" alt="Finished haircut" loading="lazy">
+      <img class="d" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9QxfVqg0Dzh3zJ63aRqZnJXP0eOEwpy7uCAnM7Br8J-sEIR2rvvwISEoNSkVdlIoTovyrh-Alje4D-WN9-kp4IBKCraA6oTtajP07qIhPG5Kr_W2go5KRId1cyniDXY0s7qE160lnIWS4AL=s1000" alt="Finished haircut" loading="lazy">
+      <img class="d" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9S6goCLkdByVAkwg_w-QrVlvx11bn94fYy2VC-q3-t2Hl1DsGQplL5nrmNtdqsCQpQ5uiW3SsekrxPk6FWe2xWFETsAP6ftNGGjj4MPmuAXhsq76UKSQBFgUPdsl6jZrjQbCNadBi1cuwn4=s1000" alt="Finished haircut" loading="lazy">
+      <img class="c" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9SdWc7-FVhBivtacUgnzj-B9ONkLnx73ARSJ5ldwhGuT95_WO8rEI1jbRd8sjY7386Ha0ke3OPyPUug5mHdU4DU8O3k4Dx-wnsVyHR8VJq9xIeG7PEiUOIUVGRR1HrQZfgLX25P3lCvVRw=s1000" alt="Finished haircut" loading="lazy">
+      <img class="e" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9SGQtVl35lsUjazIwhgzuMYsU7X3iRLpzDc24GDY0kQk6JStE70HhQzdIipPoN29dhpkMrcBQ29mdDRUHcuDZJLbUcHirNHEwzg1Dh5YFht5aFKTD2TLlNYbqpFQsNZCRDTz_Qb4m63Fwq7=s1000" alt="Finished haircut" loading="lazy">
+      <img class="f" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9QUG9OM9aEI6qpP__qTLZKbJDJ8TNkHqk56F_lnEvS721n37m3wTujRI9Jgi-o-tBEUWBalJYmmnnlJv6pkT8g5DUnD3bbgg_6ncqsr1RGexd3Cq8eoM48rjwSfH8Ss_5DQMYOIwjw6RLmv=s1000" alt="Finished haircut" loading="lazy">
     </div>
-    <figure class="frame">
-      <img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9ShyWF3VGDdt7fJ22nHF7uXiFStWTiGAgthmzrVrLVWvGo0vwBcRpCwbV9pkSLOtgHVOm-CZc9HDo9uAVMvbEx-svZtJB8Y27IFbDN4C3WwQ2CcD8Esq-7MV7MpFaHI8YMyEClp=w1200" alt="A finished haircut on a Royal Barbers client" loading="lazy">
-      <figcaption>Finished result</figcaption>
-    </figure>
+  </div>
+</section>
+
+<section class="book" id="book">
+  <div class="wrap book-grid">
+    <div class="book-side">
+      <h2>Book a slot</h2>
+      <p>Pick a service, a day and a time. Your request goes straight to the shop by WhatsApp or text, and we will confirm it.</p>
+      <p class="walk">Prefer not to book? Just walk in. No appointment is needed.</p>
+    </div>
+    <form id="bf" novalidate>
+      <div>
+        <label class="l" for="svc">Service</label>
+        <select id="svc"></select>
+      </div>
+      <div>
+        <label class="l" for="day">Date</label>
+        <input type="date" id="day">
+      </div>
+      <fieldset>
+        <legend>Time</legend>
+        <div class="slots" id="slots"></div>
+      </fieldset>
+      <div class="row">
+        <div><label class="l" for="nm">Your name</label><input type="text" id="nm" autocomplete="name"></div>
+        <div><label class="l" for="ph">Phone number</label><input type="tel" id="ph" autocomplete="tel"></div>
+      </div>
+      <div class="summary" id="sum" aria-live="polite">Choose a service, date and time.</div>
+      <div class="send">
+        <button class="btn solid" type="button" id="wa" disabled>Send on WhatsApp</button>
+        <button class="btn" type="button" id="sms" disabled>Send as text</button>
+      </div>
+      <p class="fine">This sends a request. Your slot is held once the shop replies to confirm.</p>
+    </form>
   </div>
 </section>
 
@@ -319,49 +284,85 @@
         <address>Royal Barbers<br>323A Haydons Road<br>Wimbledon, London<br>SW19 8LA</address>
         <h3>Telephone</h3>
         <a class="tel" href="tel:07828983835">07828 983835</a>
-        <div class="btns">
-          <a class="btn solid" href="https://www.google.com/maps/search/?api=1&query=Royal+Barbers+323A+Haydons+Road+Wimbledon+SW19+8LA" target="_blank" rel="noopener">Open in Google Maps</a>
-        </div>
-        <ul class="extras">
-          <li>No appointment needed</li>
-          <li>First come, first served</li>
-          <li>Free Wi-Fi available</li>
-          <li>We sell hair products</li>
-        </ul>
+        <div class="btns"><a class="btn solid" href="https://www.google.com/maps/search/?api=1&amp;query=Royal+Barbers+323A+Haydons+Road+Wimbledon+SW19+8LA" target="_blank" rel="noopener">Open in Google Maps</a></div>
+        <ul class="extras"><li>Walk-ins welcome</li><li>Free Wi-Fi available</li><li>We sell hair products</li></ul>
       </div>
       <div>
         <h3>Opening hours</h3>
-        <table class="hours" id="hours">
-          <tbody>
-            <tr data-day="1"><th scope="row">Monday</th><td>09:00 – 19:00</td></tr>
-            <tr data-day="2"><th scope="row">Tuesday</th><td>09:00 – 19:00</td></tr>
-            <tr data-day="3"><th scope="row">Wednesday</th><td>09:00 – 19:00</td></tr>
-            <tr data-day="4"><th scope="row">Thursday</th><td>09:00 – 19:00</td></tr>
-            <tr data-day="5"><th scope="row">Friday</th><td>09:00 – 19:00</td></tr>
-            <tr data-day="6"><th scope="row">Saturday</th><td>09:00 – 19:00</td></tr>
-            <tr data-day="0"><th scope="row">Sunday</th><td>09:30 – 16:30</td></tr>
-          </tbody>
-        </table>
+        <table id="hours"><tbody>
+          <tr data-day="1"><th scope="row">Monday</th><td>09:00 – 19:00</td></tr>
+          <tr data-day="2"><th scope="row">Tuesday</th><td>09:00 – 19:00</td></tr>
+          <tr data-day="3"><th scope="row">Wednesday</th><td>09:00 – 19:00</td></tr>
+          <tr data-day="4"><th scope="row">Thursday</th><td>09:00 – 19:00</td></tr>
+          <tr data-day="5"><th scope="row">Friday</th><td>09:00 – 19:00</td></tr>
+          <tr data-day="6"><th scope="row">Saturday</th><td>09:00 – 19:00</td></tr>
+          <tr data-day="0"><th scope="row">Sunday</th><td>09:30 – 16:30</td></tr>
+        </tbody></table>
       </div>
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="wrap">
-    <strong>Royal Barbers</strong><br>
-    323A Haydons Road, Wimbledon, London SW19 8LA &nbsp;|&nbsp; <a href="tel:07828983835">07828 983835</a>
-  </div>
+  <strong>Royal Barbers</strong><br>
+  323A Haydons Road, Wimbledon, London SW19 8LA &nbsp;|&nbsp; <a href="tel:07828983835">07828 983835</a>
 </footer>
 <div class="pole" aria-hidden="true"></div>
 
 <script>
-  // Highlight today's opening hours
-  (function () {
-    var today = String(new Date().getDay());
-    var row = document.querySelector('#hours tr[data-day="' + today + '"]');
-    if (row) row.classList.add("today");
-  })();
+(function(){
+  var NUM="447828983835";
+  var row=document.querySelector('#hours tr[data-day="'+new Date().getDay()+'"]');
+  if(row) row.classList.add("today");
+
+  var services=[["All Over One Grade",13],["Kids Haircut Under 12",16],["O.A.P.",16],["Normal Haircut",18],["Skin Fade",20],["Haircut & Wash",23],["All Over, Beard Trim & Shape Up",23],["Haircut, Beard Trim & Shape Up",27],["Skin Fade, Beard Trim & Shape Up",29],["Beard Trim & Shape Up",11],["Hot Towel & Shave",19],["Ear Candle",10],["Ear & Nose Wax",5]];
+  var hrs={0:[570,990],1:[540,1140],2:[540,1140],3:[540,1140],4:[540,1140],5:[540,1140],6:[540,1140]};
+  var $=function(i){return document.getElementById(i)};
+  var svc=$("svc"),day=$("day"),slots=$("slots"),sum=$("sum"),wa=$("wa"),sms=$("sms"),nm=$("nm"),ph=$("ph");
+
+  services.forEach(function(s,i){var o=document.createElement("option");o.value=i;o.textContent=s[0]+" (£"+s[1]+")";svc.appendChild(o)});
+
+  function iso(d){return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")}
+  function hm(m){return String(Math.floor(m/60)).padStart(2,"0")+":"+String(m%60).padStart(2,"0")}
+  var now=new Date(), max=new Date(now.getTime()+60*864e5);
+  day.min=iso(now); day.max=iso(max);
+
+  function build(){
+    slots.innerHTML="";
+    if(!day.value){slots.innerHTML='<p class="empty">Choose a date to see times.</p>';update();return}
+    var p=day.value.split("-"), d=new Date(+p[0],p[1]-1,+p[2]), h=hrs[d.getDay()];
+    var isToday=iso(d)===iso(new Date()), nowM=new Date().getHours()*60+new Date().getMinutes(), n=0;
+    for(var t=h[0];t<=h[1]-30;t+=30){
+      var id="t"+t, dis=isToday&&t<=nowM+15;
+      var w=document.createElement("div");
+      w.innerHTML='<input type="radio" name="tm" id="'+id+'" value="'+hm(t)+'"'+(dis?" disabled":"")+'><label for="'+id+'">'+hm(t)+'</label>';
+      slots.appendChild(w); if(!dis)n++;
+    }
+    if(!n){slots.innerHTML='<p class="empty">No more slots today. Pick another day, or walk in.</p>'}
+    update();
+  }
+
+  function msg(){
+    var s=services[svc.value], t=document.querySelector('input[name=tm]:checked');
+    if(!day.value||!t) return null;
+    var p=day.value.split("-"), d=new Date(+p[0],p[1]-1,+p[2]);
+    var ds=d.toLocaleDateString("en-GB",{weekday:"long",day:"numeric",month:"long"});
+    return {ds:ds,t:t.value,s:s,
+      text:"Hi Royal Barbers, I'd like to book a "+s[0]+" (£"+s[1]+") on "+ds+" at "+t.value+". Name: "+(nm.value.trim()||"-")+". Phone: "+(ph.value.trim()||"-")+". Please confirm. Thanks."};
+  }
+  function update(){
+    var m=msg(), ok=m&&nm.value.trim()&&ph.value.trim();
+    if(!m){sum.textContent="Choose a service, date and time.";}
+    else sum.innerHTML="<b>"+m.s[0]+"</b>, £"+m.s[1]+"<br>"+m.ds+" at "+m.t;
+    wa.disabled=sms.disabled=!ok;
+  }
+  [svc,nm,ph].forEach(function(e){e.addEventListener("input",update)});
+  day.addEventListener("input",build);
+  slots.addEventListener("change",update);
+  wa.addEventListener("click",function(){var m=msg();if(m)window.open("https://wa.me/"+NUM+"?text="+encodeURIComponent(m.text),"_blank","noopener")});
+  sms.addEventListener("click",function(){var m=msg();if(m)location.href="sms:+"+NUM+"?&body="+encodeURIComponent(m.text)});
+  build();
+})();
 </script>
 </body>
 </html>
